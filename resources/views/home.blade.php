@@ -551,7 +551,7 @@
 
                 @foreach ($photos as $item)
                     <figure>
-                        <img src="{{ $item->image_url }}" alt="Project 1">
+                        <img src="{{ asset('storage') }}/{{ $item->image_url }}" alt="Project 1">
                         <figcaption>{{ $item->title }}</figcaption>
                     </figure>
                 @endforeach
@@ -605,7 +605,9 @@
                 </figure> --}}
             </div>
 
-            <button class="load-more" id="loadMore">Load More</button>
+            <button id="loadMore" class="load-more" data-skip="{{ $photos->count() }}" data-take="6">
+                Load More
+            </button>
 
             <!-- Lightbox -->
             <div class="lightbox" id="lightbox">
@@ -926,7 +928,7 @@
     </script>
 
 
-    <script>
+    {{-- <script>
         const gallery = document.getElementById("gallery");
         const loadMoreBtn = document.getElementById("loadMore");
         const hiddenImages = gallery.querySelectorAll("img.hidden");
@@ -997,7 +999,73 @@
             if (e.key === "ArrowLeft") prevBtn.click();
             if (e.key === "Escape") closeBtn.click();
         });
-    </script>
+    </script> --}}
+
+    <script>
+  const galleryEl = document.getElementById('gallery');
+  const btn = document.getElementById('loadMore');
+  const afterIdInput = document.getElementById('afterId');
+
+  // Set to true to use cursor mode (better for big tables), false to use skip mode.
+  const USE_CURSOR = false;
+
+  async function fetchMore() {
+    btn.disabled = true;
+
+    const take = parseInt(btn.dataset.take || '6', 10);
+
+    let url = '{{ route('loadmoreimages') }}';
+    if (USE_CURSOR) {
+      const afterId = afterIdInput.value;
+      url += `?take=${take}` + (afterId ? `&after_id=${afterId}` : '');
+    } else {
+      const skip = parseInt(btn.dataset.skip || '0', 10);
+      url += `?take=${take}&skip=${skip}`;
+    }
+
+    try {
+      const res = await fetch(url, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
+      const data = await res.json();
+
+      const items = data.items || [];
+      if (!items.length) {
+        btn.style.display = 'none';
+        return;
+      }
+
+      // Append new figures
+      const frag = document.createDocumentFragment();
+      items.forEach(item => {
+        const fig = document.createElement('figure');
+        fig.setAttribute('data-id', item.id);
+        fig.innerHTML = `
+          <img src="${item.url}" alt="${item.alt}">
+          <figcaption>${item.title ?? ''}</figcaption>
+        `;
+        frag.appendChild(fig);
+      });
+      galleryEl.appendChild(frag);
+
+      // Update paging state
+      if (USE_CURSOR) {
+        afterIdInput.value = data.next_after_id || '';
+        if (!data.has_more) btn.style.display = 'none';
+      } else {
+        btn.dataset.skip = data.next_skip ?? (parseInt(btn.dataset.skip || '0', 10) + items.length);
+        if (!data.has_more || items.length < take) btn.style.display = 'none';
+      }
+    } catch (e) {
+      console.error(e);
+    } finally {
+      btn.disabled = false;
+    }
+  }
+
+  btn.addEventListener('click', fetchMore);
+
+  // Your existing lightbox handler will continue to work because we use event delegation
+  // (querySelectorAll runs fresh on each prev/next click).
+</script>
 
 </body>
 

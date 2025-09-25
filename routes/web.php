@@ -12,6 +12,7 @@ Route::get('/', [PortfolioController::class, 'index']);
 Route::get('/login', [AdminController::class, 'showLogin'])->name('login');
 Route::post('/authorize', [AdminController::class, 'login'])->name('auth');
 Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
+Route::get('/gallery/load-more', [PortfolioController::class, 'loadMore'])->name('loadmoreimages');
 
 //Admin Routes
 Route::middleware(CheckAdmin::class)->prefix('admin')->group(function(){

@@ -46,7 +46,7 @@ class GalleryController extends Controller
         // 3) Create DB row
         $gallery = Gallery::create([
             'title'     => $validated['title'],
-            'image_url' => $url,
+            'image_url' => $path,
             'alt_text'  => $validated['alt_text'] ?? null,
             'caption'   => $validated['caption'] ?? null,
         ]);

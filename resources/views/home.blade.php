@@ -1037,9 +1037,9 @@
       const frag = document.createDocumentFragment();
       items.forEach(item => {
         const fig = document.createElement('figure');
-        fig.setAttribute('data-id', item.id);
+        // fig.setAttribute('data-id', item.id);
         fig.innerHTML = `
-          <img src="${item.url}" alt="${item.alt}">
+          <img src="${item.image_url}" alt="${item.alt_text}">
           <figcaption>${item.title ?? ''}</figcaption>
         `;
         frag.appendChild(fig);

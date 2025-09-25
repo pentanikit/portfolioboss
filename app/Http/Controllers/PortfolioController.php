@@ -27,8 +27,7 @@ class PortfolioController extends Controller
         if ($request->filled('after_id')) {
             $afterId = (int) $request->after_id;
 
-            $items = Gallery::select('id','title','image')
-                ->where('id', '<', $afterId)
+            $items = Gallery::where('id', '<', $afterId)
                 ->latest('id')
                 ->take($take)
                 ->get();
@@ -37,10 +36,10 @@ class PortfolioController extends Controller
 
             return response()->json([
                 'items' => $items->map(fn ($g) => [
-                    'id'    => $g->id,
+                    
                     'title' => $g->title,
-                    'url'   => asset('storage/'.$g->image),
-                    'alt'   => $g->title ?: 'Gallery image',
+                    'image_url'   => asset('storage/'.$g->image_url),
+                    'alt_text'   => $g->title ?: 'Gallery image',
                 ]),
                 'next_after_id' => $nextAfterId,
                 'has_more' => $items->count() === $take,
@@ -57,10 +56,10 @@ class PortfolioController extends Controller
 
         return response()->json([
             'items' => $items->map(fn ($g) => [
-                'id'    => $g->id,
+                
                 'title' => $g->title,
-                'url'   => asset('storage/'.$g->image),
-                'alt'   => $g->title ?: 'Gallery image',
+                'image_url'   => asset('storage/'.$g->image_url),
+                'alt_text'   => $g->title ?: 'Gallery image',
             ]),
             'next_skip' => $skip + $items->count(),
             'has_more'  => $items->count() === $take,

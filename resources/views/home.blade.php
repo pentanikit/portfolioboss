@@ -264,7 +264,7 @@
                             <span class="tech-tag">Stripe</span>
                             <span class="tech-tag">+1 more</span>
                         </div> -->
-                        <div class="project-metrics">$5M+ GMV, 50k+ customers</div>
+                       
                     </div>
                 </a>
 
@@ -289,7 +289,7 @@
                             <span class="tech-tag">PostgreSQL</span>
                             <span class="tech-tag">+1 more</span>
                         </div> -->
-                        <div class="project-metrics">$10M+ ARR, 500+ enterprises</div>
+                        
                     </div>
                 </a>
 
@@ -314,7 +314,7 @@
                             <span class="tech-tag">AWS</span>
                             <span class="tech-tag">+1 more</span>
                         </div> -->
-                        <div class="project-metrics">10k+ brands created</div>
+                       
                     </div>
                 </a>
 
@@ -339,7 +339,7 @@
                             <span class="tech-tag">AWS</span>
                             <span class="tech-tag">+1 more</span>
                         </div> -->
-                        <div class="project-metrics">10k+ brands created</div>
+                       
                     </div>
                 </a>
 
@@ -363,7 +363,7 @@
                             <span class="tech-tag">AWS</span>
                             <span class="tech-tag">+1 more</span>
                         </div> -->
-                        <div class="project-metrics">10k+ brands created</div>
+                       
                     </div>
                 </a>
             </div>

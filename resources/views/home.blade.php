@@ -218,7 +218,7 @@
 
             <div class="portfolio-grid">
                 <!-- Project 1 -->
-                <div class="project-card">
+                <a class="project-card" href="https://ponnobd.com" target="_blank">
                     <div class="project-image">
                         <img src="{{ asset('storage/images/WhatsApp Image 2024-01-09 at 21.09.55_766bae1f.webp') }}"
                             alt="ponnobd">
@@ -239,12 +239,12 @@
                             <span class="tech-tag">MongoDB</span>
                             <span class="tech-tag">+1 more</span>
                         </div> -->
-                        <div class="project-metrics">$2M+ ARR, 100k+ users</div>
+                       
                     </div>
-                </div>
+                </a>
 
                 <!-- Project 2 -->
-                <div class="project-card">
+                <a class="project-card" href="https://pentanik.com" target="_blank">
                     <div class="project-image">
                         <img src="{{ asset('storage/images/Pentanik Logo for Social Share.webp') }}" alt="">
                         <div class="project-overlay">
@@ -266,10 +266,10 @@
                         </div> -->
                         <div class="project-metrics">$5M+ GMV, 50k+ customers</div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Project 3 -->
-                <div class="project-card">
+                <a class="project-card" href="https://onlinebanglanews.com" target="_blank">
                     <div class="project-image">
                         <img src="{{ asset('storage/images/logo-onlinebanglanews-raq.jpg') }}"
                             alt="Online bangla news">
@@ -291,10 +291,10 @@
                         </div> -->
                         <div class="project-metrics">$10M+ ARR, 500+ enterprises</div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Project 4 -->
-                <div class="project-card">
+                <a class="project-card" href="https://pentanikit.com" target="_blank">
                     <div class="project-image">
                         <img src="{{ asset('storage/images/logo-pentanikit.jpg') }}" alt="pentanikit">
                         <div class="project-overlay">
@@ -316,10 +316,10 @@
                         </div> -->
                         <div class="project-metrics">10k+ brands created</div>
                     </div>
-                </div>
+                </a>
 
                 <!--project 5-->
-                <div class="project-card">
+                <a class="project-card" href="https://servicebari.com" target="_blank">
                     <div class="project-image">
                         <img src="{{ asset('storage/images/logo-servicebari.jpg') }}" alt="Service Bari">
                         <div class="project-overlay">
@@ -341,10 +341,10 @@
                         </div> -->
                         <div class="project-metrics">10k+ brands created</div>
                     </div>
-                </div>
+                </a>
 
                 <!--project 6-->
-                <div class="project-card">
+                <a class="project-card" href="https://thebrainbd.com" target="_blank">
                     <div class="project-image">
                         <img src="{{ asset('storage/images/images.jpg') }}" alt="Service Bari">
                         <div class="project-overlay">
@@ -365,7 +365,7 @@
                         </div> -->
                         <div class="project-metrics">10k+ brands created</div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
@@ -515,7 +515,7 @@
                     <div class="contact-info-card">
                         <h3 class="info-title">Contact Information</h3>
                         <div class="info-items">
-                            <div class="info-item" onclick="window.location.href='mailto:alex@alexthompson.com'">
+                            <div class="info-item" onclick="window.location.href='mailto:raquibul2030@gmail.com'">
                                 <div class="info-icon">
                                     <i class="fas fa-envelope"></i>
                                 </div>

@@ -384,27 +384,34 @@
                 </p> --}}
             </div>
 
-            <div class="services-grid">
-                <!-- Service 1 -->
-                @foreach ($posts as $item)
-                    <a class="service-card" style="text-decoration: none; color:inherit;"
-                        href="/single-post/{{ $item->title }}">
-                        <div>
+            @if ($posts)
+                    <div class="services-grid">
+                    <!-- Service 1 -->
+                    @foreach ($posts as $item)
+                        <a class="service-card" style="text-decoration: none; color:inherit;"
+                            href="/single-post/{{ $item->title }}">
+                            <div>
 
-                            <img class="mb-3" style="width: 100%; height:200px; object-fit:cover;"
-                                src="/storage/{{ $item->image }}" alt="">
+                                <img class="mb-3" style="width: 100%; height:200px; object-fit:cover;"
+                                    src="{{ asset('storage') }}/{{ $item->image }}" alt="">
 
-                            <h3 class="service-title">{{ $item->title }}</h3>
+                                <h3 class="service-title">{{ $item->title }}</h3>
 
-                            <p>{{ Str::limit(strip_tags($item->body), 150) }}</p>
+                                <p>{{ Str::limit(strip_tags($item->body), 150) }}</p>
 
-                        </div>
-                    </a>
-                @endforeach
+                            </div>
+                        </a>
+                    @endforeach
 
 
 
-            </div>
+                </div>
+            @else
+                <div class="service-grid">
+                    <p>No posts to show</p>
+                </div>
+            @endif
+            
 
           
 

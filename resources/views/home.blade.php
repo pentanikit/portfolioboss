@@ -928,23 +928,67 @@
     </script>
 
 
-    {{-- <script>
+    <script>
         const gallery = document.getElementById("gallery");
         const loadMoreBtn = document.getElementById("loadMore");
         const hiddenImages = gallery.querySelectorAll("img.hidden");
         let currentBatch = 0;
         const batchSize = 6;
 
+         async function fetchMore() {
+    loadMoreBtn.disabled = true;
+
+    const take = parseInt(loadMoreBtn.dataset.take || '6', 10);
+
+    let url = '{{ route('loadmoreimages') }}';
+    if (USE_CURSOR) {
+      const afterId = afterIdInput.value;
+      url += `?take=${take}` + (afterId ? `&after_id=${afterId}` : '');
+    } else {
+      const skip = parseInt(loadMoreBtn.dataset.skip || '0', 10);
+      url += `?take=${take}&skip=${skip}`;
+    }
+
+    try {
+      const res = await fetch(url, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
+      const data = await res.json();
+
+      const items = data.items || [];
+      if (!items.length) {
+        loadMoreBtn.style.display = 'none';
+        return;
+      }
+
+      // Append new figures
+      const frag = document.createDocumentFragment();
+      items.forEach(item => {
+        const fig = document.createElement('figure');
+        // fig.setAttribute('data-id', item.id);
+        fig.innerHTML = `
+          <img src="${item.image_url}" alt="${item.alt_text}">
+          <figcaption>${item.title ?? ''}</figcaption>
+        `;
+        frag.appendChild(fig);
+      });
+      galleryEl.appendChild(frag);
+
+      // Update paging state
+      if (USE_CURSOR) {
+        afterIdInput.value = data.next_after_id || '';
+        if (!data.has_more) loadMoreBtn.style.display = 'none';
+      } else {
+        loadMoreBtn.dataset.skip = data.next_skip ?? (parseInt(loadMoreBtn.dataset.skip || '0', 10) + items.length);
+        if (!data.has_more || items.length < take) loadMoreBtn.style.display = 'none';
+      }
+    } catch (e) {
+      console.error(e);
+    } finally {
+      loadMoreBtn.disabled = false;
+    }
+  }
+
         // Load More button
-        loadMoreBtn.addEventListener("click", () => {
-            for (let i = currentBatch; i < currentBatch + batchSize && i < hiddenImages.length; i++) {
-                hiddenImages[i].classList.remove("hidden");
-            }
-            currentBatch += batchSize;
-            if (currentBatch >= hiddenImages.length) {
-                loadMoreBtn.style.display = "none";
-            }
-        });
+        loadMoreBtn.addEventListener("click", fetchMore)
 
         // Lightbox
         const lightbox = document.getElementById("lightbox");
@@ -999,74 +1043,9 @@
             if (e.key === "ArrowLeft") prevBtn.click();
             if (e.key === "Escape") closeBtn.click();
         });
-    </script> --}}
+    </script>
 
-    <script>
-  const galleryEl = document.getElementById('gallery');
-  const btn = document.getElementById('loadMore');
-  const afterIdInput = document.getElementById('afterId');
-
-  // Set to true to use cursor mode (better for big tables), false to use skip mode.
-  const USE_CURSOR = false;
-
-  async function fetchMore() {
-    btn.disabled = true;
-
-    const take = parseInt(btn.dataset.take || '6', 10);
-
-    let url = '{{ route('loadmoreimages') }}';
-    if (USE_CURSOR) {
-      const afterId = afterIdInput.value;
-      url += `?take=${take}` + (afterId ? `&after_id=${afterId}` : '');
-    } else {
-      const skip = parseInt(btn.dataset.skip || '0', 10);
-      url += `?take=${take}&skip=${skip}`;
-    }
-
-    try {
-      const res = await fetch(url, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
-      const data = await res.json();
-
-      const items = data.items || [];
-      if (!items.length) {
-        btn.style.display = 'none';
-        return;
-      }
-
-      // Append new figures
-      const frag = document.createDocumentFragment();
-      items.forEach(item => {
-        const fig = document.createElement('figure');
-        // fig.setAttribute('data-id', item.id);
-        fig.innerHTML = `
-          <img src="${item.image_url}" alt="${item.alt_text}">
-          <figcaption>${item.title ?? ''}</figcaption>
-        `;
-        frag.appendChild(fig);
-      });
-      galleryEl.appendChild(frag);
-
-      // Update paging state
-      if (USE_CURSOR) {
-        afterIdInput.value = data.next_after_id || '';
-        if (!data.has_more) btn.style.display = 'none';
-      } else {
-        btn.dataset.skip = data.next_skip ?? (parseInt(btn.dataset.skip || '0', 10) + items.length);
-        if (!data.has_more || items.length < take) btn.style.display = 'none';
-      }
-    } catch (e) {
-      console.error(e);
-    } finally {
-      btn.disabled = false;
-    }
-  }
-
-  btn.addEventListener('click', fetchMore);
-
-  // Your existing lightbox handler will continue to work because we use event delegation
-  // (querySelectorAll runs fresh on each prev/next click).
-</script>
-
+ 
 </body>
 
 </html>

@@ -218,7 +218,7 @@
 
             <div class="portfolio-grid">
                 <!-- Project 1 -->
-                <a class="project-card" href="https://ponnobd.com" target="_blank">
+                <a class="project-card" style="text-decoration: none; color:inherit;" href="https://ponnobd.com" target="_blank">
                     <div class="project-image">
                         <img src="{{ asset('storage/images/WhatsApp Image 2024-01-09 at 21.09.55_766bae1f.webp') }}"
                             alt="ponnobd">
@@ -244,7 +244,7 @@
                 </a>
 
                 <!-- Project 2 -->
-                <a class="project-card" href="https://pentanik.com" target="_blank">
+                <a class="project-card" style="text-decoration: none; color:inherit;" href="https://pentanik.com" target="_blank">
                     <div class="project-image">
                         <img src="{{ asset('storage/images/Pentanik Logo for Social Share.webp') }}" alt="">
                         <div class="project-overlay">
@@ -269,7 +269,7 @@
                 </a>
 
                 <!-- Project 3 -->
-                <a class="project-card" href="https://onlinebanglanews.com" target="_blank">
+                <a class="project-card" style="text-decoration: none; color:inherit;" href="https://onlinebanglanews.com" target="_blank">
                     <div class="project-image">
                         <img src="{{ asset('storage/images/logo-onlinebanglanews-raq.jpg') }}"
                             alt="Online bangla news">
@@ -294,7 +294,7 @@
                 </a>
 
                 <!-- Project 4 -->
-                <a class="project-card" href="https://pentanikit.com" target="_blank">
+                <a class="project-card" style="text-decoration: none; color:inherit;" href="https://pentanikit.com" target="_blank">
                     <div class="project-image">
                         <img src="{{ asset('storage/images/logo-pentanikit.jpg') }}" alt="pentanikit">
                         <div class="project-overlay">
@@ -319,7 +319,7 @@
                 </a>
 
                 <!--project 5-->
-                <a class="project-card" href="https://servicebari.com" target="_blank">
+                <a class="project-card" style="text-decoration: none; color:inherit;" href="https://servicebari.com" target="_blank">
                     <div class="project-image">
                         <img src="{{ asset('storage/images/logo-servicebari.jpg') }}" alt="Service Bari">
                         <div class="project-overlay">
@@ -344,7 +344,7 @@
                 </a>
 
                 <!--project 6-->
-                <a class="project-card" href="https://thebrainbd.com" target="_blank">
+                <a class="project-card" style="text-decoration: none; color:inherit;" href="https://thebrainbd.com" target="_blank">
                     <div class="project-image">
                         <img src="{{ asset('storage/images/images.jpg') }}" alt="Service Bari">
                         <div class="project-overlay">

@@ -50,8 +50,7 @@ class PortfolioController extends Controller
         // Fallback: offset-based using skip
         $skip = (int) $request->input('skip', 0);
 
-        $items = Gallery::select('id','title','image')
-            ->latest('id')
+        $items = Gallery::latest('id')
             ->skip($skip)
             ->take($take)
             ->get();

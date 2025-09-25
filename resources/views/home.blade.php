@@ -21,6 +21,132 @@
 
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* Gallery Grid */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Hide extra images initially */
+        .gallery img.hidden {
+            display: none;
+        }
+
+        /* Load More Button */
+        .load-more {
+            display: block;
+            margin: 25px auto;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background: #ff9800;
+            color: #fff;
+            transition: background 0.3s;
+        }
+
+        .load-more:hover {
+            background: #e68900;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+
+        .lightbox.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 8px;
+        }
+
+        /* Controls */
+        .lightbox .close,
+        .lightbox .prev,
+        .lightbox .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 50%;
+            user-select: none;
+        }
+
+        .lightbox .close {
+            top: 30px;
+            right: 30px;
+            transform: none;
+            font-size: 2.5rem;
+        }
+
+        .lightbox .prev {
+            left: 40px;
+        }
+
+        .lightbox .next {
+            right: 40px;
+        }
+
+        .lightbox .close:hover,
+        .lightbox .prev:hover,
+        .lightbox .next:hover {
+            background: rgba(255, 152, 0, 0.8);
+        }
+    </style>
+
 </head>
 
 <body>
@@ -28,7 +154,8 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-brand">
-                <a href="#home" class="brand-link"><img src="{{ asset('storage/raquibul.png') }}" style="width:auto; height:40px;" alt="" srcset=""></a>
+                <a href="#home" class="brand-link"><img src="{{ asset('storage/raquibul.png') }}"
+                        style="width:auto; height:40px;" alt="" srcset=""></a>
             </div>
 
             <!-- Desktop Navigation -->
@@ -218,7 +345,8 @@
 
             <div class="portfolio-grid">
                 <!-- Project 1 -->
-                <a class="project-card" style="text-decoration: none; color:inherit;" href="https://ponnobd.com" target="_blank">
+                <a class="project-card" style="text-decoration: none; color:inherit;" href="https://ponnobd.com"
+                    target="_blank">
                     <div class="project-image">
                         <img src="{{ asset('storage/images/WhatsApp Image 2024-01-09 at 21.09.55_766bae1f.webp') }}"
                             alt="ponnobd">
@@ -239,12 +367,13 @@
                             <span class="tech-tag">MongoDB</span>
                             <span class="tech-tag">+1 more</span>
                         </div> -->
-                       
+
                     </div>
                 </a>
 
                 <!-- Project 2 -->
-                <a class="project-card" style="text-decoration: none; color:inherit;" href="https://pentanik.com" target="_blank">
+                <a class="project-card" style="text-decoration: none; color:inherit;" href="https://pentanik.com"
+                    target="_blank">
                     <div class="project-image">
                         <img src="{{ asset('storage/images/Pentanik Logo for Social Share.webp') }}" alt="">
                         <div class="project-overlay">
@@ -264,12 +393,13 @@
                             <span class="tech-tag">Stripe</span>
                             <span class="tech-tag">+1 more</span>
                         </div> -->
-                       
+
                     </div>
                 </a>
 
                 <!-- Project 3 -->
-                <a class="project-card" style="text-decoration: none; color:inherit;" href="https://onlinebanglanews.com" target="_blank">
+                <a class="project-card" style="text-decoration: none; color:inherit;"
+                    href="https://onlinebanglanews.com" target="_blank">
                     <div class="project-image">
                         <img src="{{ asset('storage/images/logo-onlinebanglanews-raq.jpg') }}"
                             alt="Online bangla news">
@@ -289,12 +419,13 @@
                             <span class="tech-tag">PostgreSQL</span>
                             <span class="tech-tag">+1 more</span>
                         </div> -->
-                        
+
                     </div>
                 </a>
 
                 <!-- Project 4 -->
-                <a class="project-card" style="text-decoration: none; color:inherit;" href="https://pentanikit.com" target="_blank">
+                <a class="project-card" style="text-decoration: none; color:inherit;" href="https://pentanikit.com"
+                    target="_blank">
                     <div class="project-image">
                         <img src="{{ asset('storage/images/logo-pentanikit.jpg') }}" alt="pentanikit">
                         <div class="project-overlay">
@@ -314,12 +445,13 @@
                             <span class="tech-tag">AWS</span>
                             <span class="tech-tag">+1 more</span>
                         </div> -->
-                       
+
                     </div>
                 </a>
 
                 <!--project 5-->
-                <a class="project-card" style="text-decoration: none; color:inherit;" href="https://servicebari.com" target="_blank">
+                <a class="project-card" style="text-decoration: none; color:inherit;" href="https://servicebari.com"
+                    target="_blank">
                     <div class="project-image">
                         <img src="{{ asset('storage/images/logo-servicebari.jpg') }}" alt="Service Bari">
                         <div class="project-overlay">
@@ -339,12 +471,13 @@
                             <span class="tech-tag">AWS</span>
                             <span class="tech-tag">+1 more</span>
                         </div> -->
-                       
+
                     </div>
                 </a>
 
                 <!--project 6-->
-                <a class="project-card" style="text-decoration: none; color:inherit;" href="https://thebrainbd.com" target="_blank">
+                <a class="project-card" style="text-decoration: none; color:inherit;" href="https://thebrainbd.com"
+                    target="_blank">
                     <div class="project-image">
                         <img src="{{ asset('storage/images/images.jpg') }}" alt="Service Bari">
                         <div class="project-overlay">
@@ -363,7 +496,7 @@
                             <span class="tech-tag">AWS</span>
                             <span class="tech-tag">+1 more</span>
                         </div> -->
-                       
+
                     </div>
                 </a>
             </div>
@@ -385,7 +518,7 @@
             </div>
 
             @if ($posts)
-                    <div class="services-grid">
+                <div class="services-grid">
                     <!-- Service 1 -->
                     @foreach ($posts as $item)
                         <a class="service-card" style="text-decoration: none; color:inherit;"
@@ -411,9 +544,76 @@
                     <p>No posts to show</p>
                 </div>
             @endif
-            
 
-          
+
+            <h2>Portfolio Gallery</h2>
+            <div class="gallery" id="gallery">
+
+                @foreach ($photos as $item)
+                    <figure>
+                        <img src="{{ $item->image_url }}" alt="Project 1">
+                        <figcaption>{{ $item->title }}</figcaption>
+                    </figure>
+                @endforeach
+                {{-- <!-- First 6 -->
+
+                <figure>
+                    <img src="https://picsum.photos/id/1016/600/400" alt="Project 2">
+                    <figcaption>Bridge Architecture</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://picsum.photos/id/1018/600/400" alt="Project 3">
+                    <figcaption>Forest Walk</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://picsum.photos/id/1020/600/400" alt="Project 4">
+                    <figcaption>City Skyline</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://picsum.photos/id/1021/600/400" alt="Project 5">
+                    <figcaption>Desert Road</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://picsum.photos/id/1022/600/400" alt="Project 6">
+                    <figcaption>Snowy Peaks</figcaption>
+                </figure>
+
+                <!-- More hidden -->
+                <figure class="hidden">
+                    <img src="https://picsum.photos/id/1023/600/400" alt="Project 7">
+                    <figcaption>Quiet Lake</figcaption>
+                </figure>
+                <figure class="hidden">
+                    <img src="https://picsum.photos/id/1024/600/400" alt="Project 8">
+                    <figcaption>Street Alley</figcaption>
+                </figure>
+                <figure class="hidden">
+                    <img src="https://picsum.photos/id/1025/600/400" alt="Project 9">
+                    <figcaption>Green Hills</figcaption>
+                </figure>
+                <figure class="hidden">
+                    <img src="https://picsum.photos/id/1026/600/400" alt="Project 10">
+                    <figcaption>Ocean Sunset</figcaption>
+                </figure>
+                <figure class="hidden">
+                    <img src="https://picsum.photos/id/1027/600/400" alt="Project 11">
+                    <figcaption>Night Lights</figcaption>
+                </figure>
+                <figure class="hidden">
+                    <img src="https://picsum.photos/id/1028/600/400" alt="Project 12">
+                    <figcaption>Wooden Path</figcaption>
+                </figure> --}}
+            </div>
+
+            <button class="load-more" id="loadMore">Load More</button>
+
+            <!-- Lightbox -->
+            <div class="lightbox" id="lightbox">
+                <button class="close" id="close">&times;</button>
+                <button class="prev" id="prev">&#10094;</button>
+                <img src="" alt="Preview" id="lightbox-img">
+                <button class="next" id="next">&#10095;</button>
+            </div>
 
 
             <!-- Call to Action -->
@@ -480,7 +680,7 @@
                             </div>
 
                             <div class="form-row">
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <label>Budget Range</label>
                                     <div class="budget-options">
                                         <span class="budget-option" data-budget="$5k - $15k">$5k - $15k</span>
@@ -497,7 +697,7 @@
                                         <span class="timeline-option" data-timeline="3-6 months">3-6 months</span>
                                         <span class="timeline-option" data-timeline="6+ months">6+ months</span>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
 
                             <div class="form-group">
@@ -722,6 +922,80 @@
                 const y = (e.pageY / window.innerHeight - 0.5) * 20;
                 bg.style.transform = `scale(1.1) translate(${x}px, ${y}px)`;
             }
+        });
+    </script>
+
+
+    <script>
+        const gallery = document.getElementById("gallery");
+        const loadMoreBtn = document.getElementById("loadMore");
+        const hiddenImages = gallery.querySelectorAll("img.hidden");
+        let currentBatch = 0;
+        const batchSize = 6;
+
+        // Load More button
+        loadMoreBtn.addEventListener("click", () => {
+            for (let i = currentBatch; i < currentBatch + batchSize && i < hiddenImages.length; i++) {
+                hiddenImages[i].classList.remove("hidden");
+            }
+            currentBatch += batchSize;
+            if (currentBatch >= hiddenImages.length) {
+                loadMoreBtn.style.display = "none";
+            }
+        });
+
+        // Lightbox
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const closeBtn = document.getElementById("close");
+        const prevBtn = document.getElementById("prev");
+        const nextBtn = document.getElementById("next");
+
+        let currentIndex = 0;
+
+        function showImage(index) {
+            const allImages = gallery.querySelectorAll("img");
+            currentIndex = index;
+            lightboxImg.src = allImages[index].src;
+            lightbox.classList.add("active");
+        }
+
+        // Click on gallery image
+        gallery.addEventListener("click", (e) => {
+            if (e.target.tagName === "IMG") {
+                const allImages = [...gallery.querySelectorAll("img")];
+                showImage(allImages.indexOf(e.target));
+            }
+        });
+
+        // Controls
+        closeBtn.addEventListener("click", () => lightbox.classList.remove("active"));
+
+        prevBtn.addEventListener("click", () => {
+            const allImages = gallery.querySelectorAll("img:not(.hidden)");
+            currentIndex = (currentIndex - 1 + allImages.length) % allImages.length;
+            lightboxImg.src = allImages[currentIndex].src;
+        });
+
+        nextBtn.addEventListener("click", () => {
+            const allImages = gallery.querySelectorAll("img:not(.hidden)");
+            currentIndex = (currentIndex + 1) % allImages.length;
+            lightboxImg.src = allImages[currentIndex].src;
+        });
+
+        // Close on background click
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove("active");
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener("keydown", (e) => {
+            if (!lightbox.classList.contains("active")) return;
+            if (e.key === "ArrowRight") nextBtn.click();
+            if (e.key === "ArrowLeft") prevBtn.click();
+            if (e.key === "Escape") closeBtn.click();
         });
     </script>
 

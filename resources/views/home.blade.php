@@ -262,21 +262,26 @@
                 <div class="about-text">
                     <h3 class="about-heading">Driven by Innovation</h3>
                     <p class="about-paragraph">
-                        With over a decade of experience in entrepreneurship and business development,
-                        I've dedicated my career to identifying market opportunities and building solutions
-                        that create lasting value.
+                        I am Raquibul Islam, a passionate and forward-thinking entrepreneur from Bangladesh.
+                        My journey in the world of business began in 2011 with the electronics sector, and over the
+                        years, I have diversified into multiple other ventures that are also running successfully today.
+                        
                     </p>
                     <p class="about-paragraph">
-                        My journey began with a simple belief: technology should serve humanity, not the other way
-                        around.
-                        This philosophy has guided me through launching multiple successful ventures, from fintech
-                        startups
-                        to e-commerce platforms.
+                        We warmly invite you to become a part of the our family. Your valuable feedback and suggestions
+                        will continue to guide and inspire us on our journey to excellence.
+
+
+                        May the Almighty bless us all with prosperity, growth and success in every walk of life.
+
+                       
                     </p>
-                    <p class="about-paragraph">
-                        Today, I focus on helping other entrepreneurs and businesses navigate digital transformation
-                        while building sustainable, profitable enterprises.
-                    </p>
+                    {{-- <p class="about-paragraph">
+                        Warm regards, <br>
+                        Md Raquibul Islam (Rakib) <br>
+                        Founder & CEO, Ponnobd Electronics <br>
+                        Local Vice President of (JCI Dhaka Pioneer)
+                    </p> --}}
 
                     <!-- Skills -->
                     <div class="skills-section">
@@ -301,21 +306,21 @@
                 <a class="achievement-card" style="text-decoration: none;" href="https://ponnobd.com"
                     target="_blank">
 
-                    <div class="achievement-value"><img src="{{ asset('storage/logos/ponnobd-final-logo.png') }}"
+                    <div class="achievement-value"><img src="{{ asset('storage/logos/ponnobd.png') }}"
                             alt="" srcset=""></div>
                     <div class="achievement-label">Founder & CEO</div>
                 </a>
                 <a class="achievement-card" style="text-decoration: none;" href="https://pentanik.com"
                     target="_blank">
 
-                    <div class="achievement-value"><img src="{{ asset('storage/logos/Pentanik-Logo.png') }}"
+                    <div class="achievement-value"><img src="{{ asset('storage/logos/Pentanik.png') }}"
                             alt="" srcset=""></div>
                     <div class="achievement-label">Founder & CEO</div>
                 </a>
                 <a class="achievement-card" style="text-decoration: none;" href="https://servicebari.com"
                     target="_blank">
 
-                    <div class="achievement-value"><img src="{{ asset('storage/logos/Service-Bari-Logo.png') }}"
+                    <div class="achievement-value"><img src="{{ asset('storage/logos/servicebari.png') }}"
                             alt="" srcset=""></div>
                     <div class="achievement-label">Founder & CEO</div>
                 </a>
@@ -332,27 +337,27 @@
                 <a class="achievement-card" style="text-decoration: none;"
                     href="https://fcclubltd.com/founding-members/" target="_blank">
 
-                    <div class="achievement-value"><img src="{{ asset('storage/logos/FCC.png') }}" alt=""
+                    <div class="achievement-value"><img src="{{ asset('storage/logos/fcc.png') }}" alt=""
                             srcset=""></div>
                     <div class="achievement-label">Founder Member</div>
                 </a>
                 <a class="achievement-card" style="text-decoration: none;"
                     href="https://basis.org.bd/company-profile/20-11-1195" target="_blank">
 
-                    <div class="achievement-value"><img src="{{ asset('storage/logos/Logo---BASIS-01.png') }}"
+                    <div class="achievement-value"><img src="{{ asset('storage/logos/basis.png') }}"
                             alt="" srcset=""></div>
                     <div class="achievement-label">General Member BASIS</div>
                 </a>
                 <a class="achievement-card" style="text-decoration: none;"
                     href="https://e-cab.net/company-profile/0911/ponnobd-electronics" target="_blank">
 
-                    <div class="achievement-value"><img src="{{ asset('storage/logos/E-cab.png') }}" alt=""
+                    <div class="achievement-value"><img src="{{ asset('storage/logos/e-Cab.png') }}" alt=""
                             srcset=""></div>
                     <div class="achievement-label">Member</div>
                 </a>
                 <a class="achievement-card" style="text-decoration: none;" href="#" target="_blank">
 
-                    <div class="achievement-value"><img src="{{ asset('storage/logos/jci-dhaka-pioneer.png') }}"
+                    <div class="achievement-value"><img src="{{ asset('storage/logos/jci.png') }}"
                             alt="" srcset=""></div>
                     <div class="achievement-label">Local Vice President</div>
                 </a>
@@ -822,14 +827,14 @@
                         successful ventures.
                     </p>
                     <div class="social-links">
-                        <a href="#" class="social-link" onclick="handleSocialClick('Twitter')">
-                            <i class="fab fa-twitter"></i>
+                        <a href="https://www.youtube.com/@raquibulislamrakib" target="_blank" class="social-link"  >
+                            <i class="fab fa-youtube"></i>
                         </a>
-                        <a href="#" class="social-link" onclick="handleSocialClick('LinkedIn')">
+                        <a href="https://www.linkedin.com/in/raquibulislamrakib/" target="_blank" class="social-link" >
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="#" class="social-link" onclick="handleSocialClick('GitHub')">
-                            <i class="fab fa-github"></i>
+                        <a href="https://www.facebook.com/raquibul2030" target="_blank" class="social-link" >
+                            <i class="fab fa-facebook"></i>
                         </a>
                     </div>
                 </div>
@@ -837,7 +842,7 @@
                 <!-- Quick Links -->
                 <div class="footer-section">
                     <h4 class="footer-section-title">Quick Links</h4>
-                    <div class="footer-links" >
+                    <div class="footer-links">
                         <a href="#home" class="nav-link">Home</a>
                         <a href="#about" class="nav-link">About</a>
                         <a href="#gallery" class="nav-link">Photos</a>

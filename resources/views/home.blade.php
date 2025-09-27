@@ -185,7 +185,7 @@
     <section id="home" class="hero">
         <div class="hero-background">
             <img src="{{ asset('storage/galleries/6G3YhKrt8QKcyXMVeX56qYq4VB9W9kVHJmT7d3F9.jpg') }}"
-                style="opacity: 0.7;" alt="Entrepreneur workspace"  class="hero-image">
+                style="opacity: 0.7;" alt="Entrepreneur workspace" class="hero-image">
             <div class="hero-overlay"></div>
         </div>
 
@@ -298,50 +298,66 @@
 
             <!-- Achievements Grid -->
             <div class="achievements-grid">
-                <div class="achievement-card">
-               
-                    <div class="achievement-value"><img src="{{ asset('storage/logos/ponnobd-final-logo.png') }}" alt="" srcset=""></div>
+                <a class="achievement-card" style="text-decoration: none;" href="https://ponnobd.com"
+                    target="_blank">
+
+                    <div class="achievement-value"><img src="{{ asset('storage/logos/ponnobd-final-logo.png') }}"
+                            alt="" srcset=""></div>
                     <div class="achievement-label">Founder & CEO</div>
-                </div>
-                <div class="achievement-card">
-                   
-                    <div class="achievement-value"><img src="{{ asset('storage/logos/Pentanik-Logo.png') }}" alt="" srcset=""></div>
+                </a>
+                <a class="achievement-card" style="text-decoration: none;" href="https://pentanik.com"
+                    target="_blank">
+
+                    <div class="achievement-value"><img src="{{ asset('storage/logos/Pentanik-Logo.png') }}"
+                            alt="" srcset=""></div>
                     <div class="achievement-label">Founder & CEO</div>
-                </div>
-                <div class="achievement-card">
-                   
-                    <div class="achievement-value"><img src="{{ asset('storage/logos/Service-Bari-Logo.png') }}"  alt="" srcset=""></div>
+                </a>
+                <a class="achievement-card" style="text-decoration: none;" href="https://servicebari.com"
+                    target="_blank">
+
+                    <div class="achievement-value"><img src="{{ asset('storage/logos/Service-Bari-Logo.png') }}"
+                            alt="" srcset=""></div>
                     <div class="achievement-label">Founder & CEO</div>
-                </div>
-                <div class="achievement-card">
-                    
-                    <div class="achievement-value"><img src="{{ asset('storage/logos/pentanik-it-Solution-Park.png') }}" alt="" srcset=""></div>
+                </a>
+                <a class="achievement-card" style="text-decoration: none;" href="https://pentanikit.com"
+                    target="_blank">
+
+                    <div class="achievement-value"><img
+                            src="{{ asset('storage/logos/pentanik-it-Solution-Park.png') }}" alt=""
+                            srcset=""></div>
                     <div class="achievement-label">Founder & CEO</div>
-                </div>
+                </a>
             </div>
             <div class="achievements-grid">
-                <div class="achievement-card">
-                    
-                    <div class="achievement-value"><img src="{{ asset('storage/logos/FCC.png') }}" alt="" srcset=""></div>
+                <a class="achievement-card" style="text-decoration: none;"
+                    href="https://fcclubltd.com/founding-members/" target="_blank">
+
+                    <div class="achievement-value"><img src="{{ asset('storage/logos/FCC.png') }}" alt=""
+                            srcset=""></div>
                     <div class="achievement-label">Founder Member</div>
-                </div>
-                <div class="achievement-card">
-                   
-                    <div class="achievement-value"><img src="{{ asset('storage/logos/Logo---BASIS-01.png') }}" alt="" srcset=""></div>
+                </a>
+                <a class="achievement-card" style="text-decoration: none;"
+                    href="https://basis.org.bd/company-profile/20-11-1195" target="_blank">
+
+                    <div class="achievement-value"><img src="{{ asset('storage/logos/Logo---BASIS-01.png') }}"
+                            alt="" srcset=""></div>
                     <div class="achievement-label">General Member BASIS</div>
-                </div>
-                <div class="achievement-card">
-                    
-                    <div class="achievement-value"><img src="{{ asset('storage/logos/E-cab.png') }}" alt="" srcset=""></div>
+                </a>
+                <a class="achievement-card" style="text-decoration: none;"
+                    href="https://e-cab.net/company-profile/0911/ponnobd-electronics" target="_blank">
+
+                    <div class="achievement-value"><img src="{{ asset('storage/logos/E-cab.png') }}" alt=""
+                            srcset=""></div>
                     <div class="achievement-label">Member</div>
-                </div>
-                <div class="achievement-card">
-                    
-                    <div class="achievement-value"><img src="{{ asset('storage/logos/jci-dhaka-pioneer.png') }}"  alt="" srcset=""></div>
-                    <div class="achievement-label">Founder & CEO</div>
-                </div>
+                </a>
+                <a class="achievement-card" style="text-decoration: none;" href="#" target="_blank">
+
+                    <div class="achievement-value"><img src="{{ asset('storage/logos/jci-dhaka-pioneer.png') }}"
+                            alt="" srcset=""></div>
+                    <div class="achievement-label">Local Vice President</div>
+                </a>
             </div>
-  
+
         </div>
     </section>
 
@@ -364,9 +380,8 @@
                 <a class="project-card" style="text-decoration: none; color:inherit;" href="https://ponnobd.com"
                     target="_blank">
                     <div class="project-image" style="max-width: 90%; margin:auto;">
-                        <img src="{{ asset('storage/images/ponnobd.com.png') }}"
-                            alt="ponnobd"  >
-                      
+                        <img src="{{ asset('storage/images/ponnobd.com.png') }}" alt="ponnobd">
+
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Ponnobd Electronics</h3>
@@ -388,7 +403,7 @@
                 <a class="project-card" style="text-decoration: none; color:inherit;" href="https://pentanik.com"
                     target="_blank">
                     <div class="project-image" style="max-width: 90%; margin:auto;">
-                        <img src="{{ asset('storage/images/pentanik-logo.png') }}"  alt="">
+                        <img src="{{ asset('storage/images/pentanik-logo.png') }}" alt="">
                         <div class="project-overlay">
                             <!-- <span class="project-category">E-commerce</span> -->
                             {{-- <span class="project-status live">Live</span> --}}
@@ -440,7 +455,7 @@
                 <a class="project-card" style="text-decoration: none; color:inherit; " href="https://pentanikit.com"
                     target="_blank">
                     <div class="project-image" style="max-width: 90%; margin:auto;">
-                        <img src="{{ asset('storage/images/pentanik-it-Solution-Park.png') }}"  alt="pentanikit">
+                        <img src="{{ asset('storage/images/pentanik-it-Solution-Park.png') }}" alt="pentanikit">
                         <div class="project-overlay">
                             <!-- <span class="project-category">Service</span> -->
                             {{-- <span class="project-status live">Live</span> --}}
@@ -694,8 +709,8 @@
                                 </div>
                             </div>
 
-                            <div class="form-row">
-                                {{-- <div class="form-group">
+                            {{-- <div class="form-row">
+                                <div class="form-group">
                                     <label>Budget Range</label>
                                     <div class="budget-options">
                                         <span class="budget-option" data-budget="$5k - $15k">$5k - $15k</span>
@@ -712,8 +727,8 @@
                                         <span class="timeline-option" data-timeline="3-6 months">3-6 months</span>
                                         <span class="timeline-option" data-timeline="6+ months">6+ months</span>
                                     </div>
-                                </div> --}}
-                            </div>
+                                </div>
+                            </div> --}}
 
                             <div class="form-group">
                                 <label for="message">Message *</label>
@@ -746,7 +761,7 @@
                                     <div class="info-value">raquibul2030@gmail.com</div>
                                 </div>
                             </div>
-                            <div class="info-item" onclick="window.location.href='tel:+8801716122945'">
+                            {{-- <div class="info-item" onclick="window.location.href='tel:+8801716122945'">
                                 <div class="info-icon">
                                     <i class="fas fa-phone"></i>
                                 </div>
@@ -754,7 +769,7 @@
                                     <div class="info-label">Phone</div>
                                     <div class="info-value">+8801716122945</div>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="info-item">
                                 <div class="info-icon">
                                     <i class="fas fa-map-marker-alt"></i>
@@ -822,12 +837,13 @@
                 <!-- Quick Links -->
                 <div class="footer-section">
                     <h4 class="footer-section-title">Quick Links</h4>
-                    <div class="footer-links">
-                        <a href="#home" class="footer-link">Home</a>
-                        <a href="#about" class="footer-link">About</a>
-                        <a href="#portfolio" class="footer-link">Portfolio</a>
-                        <a href="#services" class="footer-link">Services</a>
-                        <a href="#contact" class="footer-link">Contact</a>
+                    <div class="footer-links" >
+                        <a href="#home" class="nav-link">Home</a>
+                        <a href="#about" class="nav-link">About</a>
+                        <a href="#gallery" class="nav-link">Photos</a>
+                        <a href="#portfolio" class="nav-link">Business</a>
+                        <a href="#services" class="nav-link">Blog</a>
+                        <a href="#contact" class="nav-link">Contact</a>
                     </div>
                 </div>
 
@@ -839,10 +855,10 @@
                             <i class="fas fa-envelope"></i>
                             raquibul2030@gmail.com
                         </a>
-                        <a href="tel:+15551234567" class="footer-contact-item">
+                        {{-- <a href="tel:+15551234567" class="footer-contact-item">
                             <i class="fas fa-phone"></i>
                             +8801716122945
-                        </a>
+                        </a> --}}
                         <div class="footer-contact-item">
                             <i class="fas fa-map-marker-alt"></i>
                             46, Shewrapara, Begum Rokeya Sarani, Dhaka
@@ -948,57 +964,62 @@
         let currentBatch = 0;
         const batchSize = 6;
 
-         async function fetchMore() {
-    loadMoreBtn.disabled = true;
+        async function fetchMore() {
+            loadMoreBtn.disabled = true;
 
-    const take = parseInt(loadMoreBtn.dataset.take || '6', 10);
+            const take = parseInt(loadMoreBtn.dataset.take || '6', 10);
 
-    let url = '{{ route('loadmoreimages') }}';
-    if (USE_CURSOR) {
-      const afterId = afterIdInput.value;
-      url += `?take=${take}` + (afterId ? `&after_id=${afterId}` : '');
-    } else {
-      const skip = parseInt(loadMoreBtn.dataset.skip || '0', 10);
-      url += `?take=${take}&skip=${skip}`;
-    }
+            let url = '{{ route('loadmoreimages') }}';
+            if (USE_CURSOR) {
+                const afterId = afterIdInput.value;
+                url += `?take=${take}` + (afterId ? `&after_id=${afterId}` : '');
+            } else {
+                const skip = parseInt(loadMoreBtn.dataset.skip || '0', 10);
+                url += `?take=${take}&skip=${skip}`;
+            }
 
-    try {
-      const res = await fetch(url, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
-      const data = await res.json();
+            try {
+                const res = await fetch(url, {
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                });
+                const data = await res.json();
 
-      const items = data.items || [];
-      if (!items.length) {
-        loadMoreBtn.style.display = 'none';
-        return;
-      }
+                const items = data.items || [];
+                if (!items.length) {
+                    loadMoreBtn.style.display = 'none';
+                    return;
+                }
 
-      // Append new figures
-      const frag = document.createDocumentFragment();
-      items.forEach(item => {
-        const fig = document.createElement('figure');
-        // fig.setAttribute('data-id', item.id);
-        fig.innerHTML = `
+                // Append new figures
+                const frag = document.createDocumentFragment();
+                items.forEach(item => {
+                    const fig = document.createElement('figure');
+                    // fig.setAttribute('data-id', item.id);
+                    fig.innerHTML = `
           <img src="${item.image_url}" alt="${item.alt_text}">
           <figcaption>${item.title ?? ''}</figcaption>
         `;
-        frag.appendChild(fig);
-      });
-      galleryEl.appendChild(frag);
+                    frag.appendChild(fig);
+                });
+                galleryEl.appendChild(frag);
 
-      // Update paging state
-      if (USE_CURSOR) {
-        afterIdInput.value = data.next_after_id || '';
-        if (!data.has_more) loadMoreBtn.style.display = 'none';
-      } else {
-        loadMoreBtn.dataset.skip = data.next_skip ?? (parseInt(loadMoreBtn.dataset.skip || '0', 10) + items.length);
-        if (!data.has_more || items.length < take) loadMoreBtn.style.display = 'none';
-      }
-    } catch (e) {
-      console.error(e);
-    } finally {
-      loadMoreBtn.disabled = false;
-    }
-  }
+                // Update paging state
+                if (USE_CURSOR) {
+                    afterIdInput.value = data.next_after_id || '';
+                    if (!data.has_more) loadMoreBtn.style.display = 'none';
+                } else {
+                    loadMoreBtn.dataset.skip = data.next_skip ?? (parseInt(loadMoreBtn.dataset.skip || '0', 10) + items
+                        .length);
+                    if (!data.has_more || items.length < take) loadMoreBtn.style.display = 'none';
+                }
+            } catch (e) {
+                console.error(e);
+            } finally {
+                loadMoreBtn.disabled = false;
+            }
+        }
 
         // Load More button
         loadMoreBtn.addEventListener("click", fetchMore)
@@ -1058,7 +1079,7 @@
         });
     </script>
 
- 
+
 </body>
 
 </html>

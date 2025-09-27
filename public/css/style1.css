@@ -336,7 +336,7 @@ p {
 /* Hero Section */
 .hero {
   position: relative;
-  min-height: 100vh;
+ 
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -346,12 +346,19 @@ p {
   position: absolute;
   inset: 0;
   z-index: 0;
+  
 }
 
 .hero-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Mobile: don't crop—show full image */
+@media (max-width: 640px) {
+  .hero-background { width:100%; height: 80vh; } /* show a bit more vertical area */
+  .hero-image { transform: scale(0.95); } /* pull back the “camera” */
 }
 
 .hero-overlay {
@@ -369,7 +376,7 @@ p {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--spacing-lg);
-  padding-top: 5rem;
+  padding-top: 1rem;
 }
 
 .hero-text {
@@ -380,6 +387,7 @@ p {
   font-size: 4rem;
   font-weight: 800;
   line-height: 1.1;
+  margin-top: 2rem;
   margin-bottom: var(--spacing-lg);
 }
 
@@ -404,11 +412,13 @@ p {
 }
 
 .hero-stats {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-lg);
   margin-bottom: var(--spacing-2xl);
 }
+
+
 
 .stat-item {
   text-align: center;
@@ -484,7 +494,7 @@ p {
 
 /* Section Styles */
 section {
-  padding: 5rem 0;
+  padding: 2rem 0;
 }
 
 .section-header {
@@ -579,25 +589,74 @@ section {
   font-weight: 500;
 }
 
+/* Grid */
 .achievements-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--spacing-lg);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--spacing-lg, 1rem);
 }
 
+/* Add proper gap between the two grids stacked one after another */
+.achievements-grid + .achievements-grid {
+  margin-top: var(--spacing-lg, 1rem);
+}
+
+/* Card */
 .achievement-card {
-  background-color: var(--card);
-  padding: var(--spacing-xl);
-  border-radius: var(--radius-lg);
+  background-color: var(--card, #111);
+  padding: var(--spacing-xl, 1.25rem);
+  border-radius: var(--radius-lg, 16px);
   text-align: center;
-  transition: transform var(--transition-fast);
-  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast, .2s ease), box-shadow var(--transition-fast, .2s ease);
+  box-shadow: var(--shadow-sm, 0 2px 10px rgba(0,0,0,.08));
 }
 
 .achievement-card:hover {
   transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-lg, 0 10px 30px rgba(0,0,0,.15));
 }
+
+/* Consistent logo box */
+.achievement-value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 110px;           /* ensures equal height row for all logos */
+  margin-bottom: .75rem;
+}
+
+.achievement-value img {
+  max-width: 140px;            /* cap the logo width */
+  width: 100%;
+  height: auto;                 /* keep aspect ratio */
+  object-fit: contain;          /* safety if height is ever set */
+  display: block;
+}
+
+/* Label */
+.achievement-label {
+  font-size: clamp(.9rem, 2vw, 1rem);
+  opacity: .9;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 640px) {     /* Mobile: 1 column */
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md, .75rem);
+  }
+  .achievement-card {
+    padding: var(--spacing-lg, 1rem);
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {  /* Tablet: 2 columns */
+  .achievements-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--spacing-lg, 1rem);
+  }
+}
+
 
 .achievement-icon {
   display: inline-flex;
@@ -641,8 +700,8 @@ section {
 /* Portfolio Section */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-xl);
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-lg);
 }
 
 .project-card {
@@ -666,7 +725,7 @@ section {
 
 .project-image img {
   width: 100%;
-  height: 16rem;
+  height: 12rem;
   object-fit: contain;
   transition: transform var(--transition-normal);
 }
@@ -705,7 +764,7 @@ section {
 }
 
 .project-content {
-  padding: var(--spacing-lg);
+  padding: var(--spacing-sm);
 }
 
 .project-title {

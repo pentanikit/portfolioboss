@@ -8,6 +8,8 @@ use App\Models\Gallery;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Auth;
 
+use Illuminate\Support\Facades\Cookie;
+
 
 class AdminController extends Controller
 {
@@ -19,9 +21,26 @@ class AdminController extends Controller
         return view('admin.upload');
     }
 
+    public function post_view(Request $request, Post $post){
+            $viewsKey = "post:{$post->id}:views";
+            $seenCookie = "seen_post_{$post->id}";
+
+            // initialize if missing
+            Cache::add($viewsKey, 0);
+
+            // count unique-ish view per visitor per 6 hours
+            if (!$request->cookies->has($seenCookie)) {
+                Cache::increment($viewsKey); // works with file/redis/memcached
+                Cookie::queue($seenCookie, '1', 60 * 6); // minutes
+            }
+
+            $views = Cache::get($viewsKey, 0);
+            return view('posts.show', compact('post','views'));
+    }
+
 
     public function dashboard(){
-        $postCount = Blog::where('status', 'published')->count();
+        $postCount = Blog::where('status', 'published')->get();
         $archiveCount = Blog::where('status', 'archived')->count();
         $draftCount = Blog::where('status', 'draft')->count();
         $photoCount = Gallery::all()->count();

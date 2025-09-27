@@ -162,8 +162,9 @@
             <div class="nav-menu" id="nav-menu">
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
-                <a href="#portfolio" class="nav-link">Portfolio</a>
-                <a href="#services" class="nav-link">Services</a>
+                <a href="#gallery" class="nav-link">Photos</a>
+                <a href="#portfolio" class="nav-link">Business</a>
+                <a href="#services" class="nav-link">Blog</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
 
@@ -184,7 +185,7 @@
     <section id="home" class="hero">
         <div class="hero-background">
             <img src="{{ asset('storage/galleries/6G3YhKrt8QKcyXMVeX56qYq4VB9W9kVHJmT7d3F9.jpg') }}"
-                style="opacity: 0.3;" alt="Entrepreneur workspace" class="hero-image">
+                style="opacity: 0.7;" alt="Entrepreneur workspace"  class="hero-image">
             <div class="hero-overlay"></div>
         </div>
 
@@ -195,8 +196,8 @@
                     <div class="hero-title-line">I am <span class="hero-title-gradient">Raquibul Islam</span></div>
                 </h1>
 
-                <p class="hero-description">
-                    Entrepreneur, innovator, and digital transformation expert with 10+ years of experience
+                <p class="hero-description" style="color:black; font-style:bold;">
+                    Entrepreneur, innovator, and digital transformation expert with 15+ years of experience
                     building successful ventures and leading high-performance teams.
                 </p>
 
@@ -204,15 +205,15 @@
                 <div class="hero-stats">
                     <div class="stat-item">
                         <div class="stat-number">15+</div>
-                        <div class="stat-label">Successful Ventures</div>
+                        <div class="stat-label" style="color:black; font-style:bold;">Successful Ventures</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-number">15</div>
-                        <div class="stat-label">Years of success</div>
+                        <div class="stat-label" style="color:black; font-style:bold;">Years of success</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-number">200+</div>
-                        <div class="stat-label">Team Members Led</div>
+                        <div class="stat-label" style="color:black; font-style:bold;">Team Members Led</div>
                     </div>
                 </div>
 
@@ -298,34 +299,49 @@
             <!-- Achievements Grid -->
             <div class="achievements-grid">
                 <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <div class="achievement-value">25+</div>
-                    <div class="achievement-label">Awards Won</div>
+               
+                    <div class="achievement-value"><img src="{{ asset('storage/logos/ponnobd-final-logo.png') }}" alt="" srcset=""></div>
+                    <div class="achievement-label">Founder & CEO</div>
                 </div>
                 <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-target"></i>
-                    </div>
-                    <div class="achievement-value">100%</div>
-                    <div class="achievement-label">Goals Achieved</div>
+                   
+                    <div class="achievement-value"><img src="{{ asset('storage/logos/Pentanik-Logo.png') }}" alt="" srcset=""></div>
+                    <div class="achievement-label">Founder & CEO</div>
                 </div>
                 <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="achievement-value">50+</div>
-                    <div class="achievement-label">Team Size</div>
+                   
+                    <div class="achievement-value"><img src="{{ asset('storage/logos/Service-Bari-Logo.png') }}"  alt="" srcset=""></div>
+                    <div class="achievement-label">Founder & CEO</div>
                 </div>
                 <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="achievement-value">300%</div>
-                    <div class="achievement-label">Growth Rate</div>
+                    
+                    <div class="achievement-value"><img src="{{ asset('storage/logos/pentanik-it-Solution-Park.png') }}" alt="" srcset=""></div>
+                    <div class="achievement-label">Founder & CEO</div>
                 </div>
             </div>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    
+                    <div class="achievement-value"><img src="{{ asset('storage/logos/FCC.png') }}" alt="" srcset=""></div>
+                    <div class="achievement-label">Founder Member</div>
+                </div>
+                <div class="achievement-card">
+                   
+                    <div class="achievement-value"><img src="{{ asset('storage/logos/Logo---BASIS-01.png') }}" alt="" srcset=""></div>
+                    <div class="achievement-label">General Member BASIS</div>
+                </div>
+                <div class="achievement-card">
+                    
+                    <div class="achievement-value"><img src="{{ asset('storage/logos/E-cab.png') }}" alt="" srcset=""></div>
+                    <div class="achievement-label">Member</div>
+                </div>
+                <div class="achievement-card">
+                    
+                    <div class="achievement-value"><img src="{{ asset('storage/logos/jci-dhaka-pioneer.png') }}"  alt="" srcset=""></div>
+                    <div class="achievement-label">Founder & CEO</div>
+                </div>
+            </div>
+  
         </div>
     </section>
 
@@ -347,16 +363,13 @@
                 <!-- Project 1 -->
                 <a class="project-card" style="text-decoration: none; color:inherit;" href="https://ponnobd.com"
                     target="_blank">
-                    <div class="project-image">
-                        <img src="{{ asset('storage/images/WhatsApp Image 2024-01-09 at 21.09.55_766bae1f.webp') }}"
-                            alt="ponnobd">
-                        <div class="project-overlay">
-                            <!-- <span class="project-category">Ecommerce</span> -->
-                            <span class="project-status live">Live</span>
-                        </div>
+                    <div class="project-image" style="max-width: 90%; margin:auto;">
+                        <img src="{{ asset('storage/images/ponnobd.com.png') }}"
+                            alt="ponnobd"  >
+                      
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Ponnobd</h3>
+                        <h3 class="project-title">Ponnobd Electronics</h3>
                         <p class="project-description">
                             Ponnobd Electronics is one of the top electronics, electric and home appliances brand with
                             one of the largest trusted online shop.
@@ -374,11 +387,11 @@
                 <!-- Project 2 -->
                 <a class="project-card" style="text-decoration: none; color:inherit;" href="https://pentanik.com"
                     target="_blank">
-                    <div class="project-image">
-                        <img src="{{ asset('storage/images/Pentanik Logo for Social Share.webp') }}" alt="">
+                    <div class="project-image" style="max-width: 90%; margin:auto;">
+                        <img src="{{ asset('storage/images/pentanik-logo.png') }}"  alt="">
                         <div class="project-overlay">
                             <!-- <span class="project-category">E-commerce</span> -->
-                            <span class="project-status live">Live</span>
+                            {{-- <span class="project-status live">Live</span> --}}
                         </div>
                     </div>
                     <div class="project-content">
@@ -398,7 +411,7 @@
                 </a>
 
                 <!-- Project 3 -->
-                <a class="project-card" style="text-decoration: none; color:inherit;"
+                {{-- <a class="project-card" style="text-decoration: none; color:inherit;"
                     href="https://onlinebanglanews.com" target="_blank">
                     <div class="project-image">
                         <img src="{{ asset('storage/images/logo-onlinebanglanews-raq.jpg') }}"
@@ -421,16 +434,16 @@
                         </div> -->
 
                     </div>
-                </a>
+                </a> --}}
 
                 <!-- Project 4 -->
-                <a class="project-card" style="text-decoration: none; color:inherit;" href="https://pentanikit.com"
+                <a class="project-card" style="text-decoration: none; color:inherit; " href="https://pentanikit.com"
                     target="_blank">
-                    <div class="project-image">
-                        <img src="{{ asset('storage/images/logo-pentanikit.jpg') }}" alt="pentanikit">
+                    <div class="project-image" style="max-width: 90%; margin:auto;">
+                        <img src="{{ asset('storage/images/pentanik-it-Solution-Park.png') }}"  alt="pentanikit">
                         <div class="project-overlay">
                             <!-- <span class="project-category">Service</span> -->
-                            <span class="project-status live">Live</span>
+                            {{-- <span class="project-status live">Live</span> --}}
                         </div>
                     </div>
                     <div class="project-content">
@@ -452,11 +465,11 @@
                 <!--project 5-->
                 <a class="project-card" style="text-decoration: none; color:inherit;" href="https://servicebari.com"
                     target="_blank">
-                    <div class="project-image">
-                        <img src="{{ asset('storage/images/logo-servicebari.jpg') }}" alt="Service Bari">
+                    <div class="project-image" style="max-width: 90%; margin:auto;">
+                        <img src="{{ asset('storage/images/service-bari-logo.png') }}" alt="Service Bari">
                         <div class="project-overlay">
                             <!-- <span class="project-category">Service</span> -->
-                            <span class="project-status live">Live</span>
+                            {{-- <span class="project-status live">Live</span> --}}
                         </div>
                     </div>
                     <div class="project-content">
@@ -476,7 +489,7 @@
                 </a>
 
                 <!--project 6-->
-                <a class="project-card" style="text-decoration: none; color:inherit;" href="https://thebrainbd.com"
+                {{-- <a class="project-card" style="text-decoration: none; color:inherit;" href="https://thebrainbd.com"
                     target="_blank">
                     <div class="project-image">
                         <img src="{{ asset('storage/images/images.jpg') }}" alt="Service Bari">
@@ -498,7 +511,7 @@
                         </div> -->
 
                     </div>
-                </a>
+                </a> --}}
             </div>
         </div>
     </section>
@@ -546,7 +559,7 @@
             @endif
 
 
-            <h2>Portfolio Gallery</h2>
+            <h2>Photos</h2>
             <div class="gallery" id="gallery">
 
                 @foreach ($photos as $item)

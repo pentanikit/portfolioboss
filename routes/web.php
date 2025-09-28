@@ -17,7 +17,7 @@ Route::get('/gallery/load-more', [PortfolioController::class, 'loadMore'])->name
 
 //Admin Routes
 Route::middleware(CheckAdmin::class)->prefix('admin')->group(function(){
-    Route::get('admin', [AdminController::class, 'dashboard']);
+    Route::get('/', [AdminController::class, 'dashboard']);
 
     Route::get('/blog', [AdminController::class, 'blog'])->name('blog');
     Route::get('/galleries', [AdminController::class, 'gallery'])->name('gallery');

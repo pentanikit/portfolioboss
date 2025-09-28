@@ -6,7 +6,10 @@ use App\Models\Gallery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Symfony\Component\HttpFoundation\Response;
 
 class GalleryController extends Controller
 {
@@ -93,32 +96,39 @@ class GalleryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Gallery $gallery, Request $request)
-    {
-        try {
-            // Optional: authorization
-            // $this->authorize('delete', $image);
+public function destroy(Gallery $gallery)
+{
+    try {
+        // capture file path before DB delete
+        $path = $gallery->image_url;
 
-            // If you stored relative path in $image->path (e.g., "uploads/foo.jpg")
-            // and the file is in the public disk:
-            if ($gallery->image_url && Storage::disk('public')->exists($gallery->image_url)) {
-                Storage::disk('public')->delete($gallery->image_url);
+        // Hard delete row
+        $usesSoftDeletes = in_array(SoftDeletes::class, class_uses_recursive($gallery));
+        DB::transaction(function () use ($gallery, $usesSoftDeletes) {
+            if ($usesSoftDeletes) {
+                $gallery->forceDelete();     // permanent
+            } else {
+                $gallery->delete();          // permanent if no SoftDeletes on model
             }
+        });
 
-            $gallery->delete();
-            $gallery->save();
-
-            return response()->json([
-                'ok'   => true,
-                'id'   => $gallery->id,
-                'msg'  => 'Image deleted successfully.',
-            ]);
-        } catch (\Throwable $e) {
-            return response()->json([
-                'ok'   => false,
-                'msg'  => 'Failed to delete image.',
-                'err'  => config('app.debug') ? $e->getMessage() : null,
-            ]);
+        // delete file (outside transaction)
+        if ($path && Storage::disk('public')->exists($path)) {
+            Storage::disk('public')->delete($path);
         }
+
+        return response()->json([
+            'ok'  => true,
+            'id'  => $gallery->getKey(),
+            'msg' => 'Image hard-deleted.',
+        ], Response::HTTP_OK);
+
+    } catch (\Throwable $e) {
+        return response()->json([
+            'ok'  => false,
+            'msg' => 'Failed to delete image.',
+            'err' => config('app.debug') ? $e->getMessage() : null,
+        ], Response::HTTP_INTERNAL_SERVER_ERROR);
     }
+}
 }

@@ -106,6 +106,7 @@ class GalleryController extends Controller
             }
 
             $gallery->delete();
+            $gallery->save();
 
             return response()->json([
                 'ok'   => true,

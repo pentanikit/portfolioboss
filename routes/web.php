@@ -13,10 +13,11 @@ Route::get('/login', [AdminController::class, 'showLogin'])->name('login');
 Route::post('/authorize', [AdminController::class, 'login'])->name('auth');
 Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
 Route::get('/gallery/load-more', [PortfolioController::class, 'loadMore'])->name('loadmoreimages');
-Route::get('admin', [AdminController::class, 'dashboard']);
+
 
 //Admin Routes
 Route::middleware(CheckAdmin::class)->prefix('admin')->group(function(){
+    Route::get('admin', [AdminController::class, 'dashboard']);
 
     Route::get('/blog', [AdminController::class, 'blog'])->name('blog');
     Route::get('/galleries', [AdminController::class, 'gallery'])->name('gallery');

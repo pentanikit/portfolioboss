@@ -101,8 +101,8 @@ class GalleryController extends Controller
 
             // If you stored relative path in $image->path (e.g., "uploads/foo.jpg")
             // and the file is in the public disk:
-            if ($gallery->path && Storage::disk('public')->exists($gallery->path)) {
-                Storage::disk('public')->delete($gallery->path);
+            if ($gallery->image_url && Storage::disk('public')->exists($gallery->image_url)) {
+                Storage::disk('public')->delete($gallery->image_url);
             }
 
             $gallery->delete();

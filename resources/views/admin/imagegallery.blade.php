@@ -44,7 +44,7 @@
                         @if(!empty($img->title))
                             <figcaption class="p-3 text-sm text-gray-700">
                                 <div class="font-medium">{{ $img->title ?? '' }}</div>
-                                <div class="text-gray-500">{{ $img->title ?? '' }}</div>
+                                
                             </figcaption>
                         @endif
                     </figure>

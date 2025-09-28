@@ -21,6 +21,48 @@
 
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+        <!-- Dynamic Title (fallback সহ) -->
+    <title>{{ $metaTitle ?? 'Raquibul Islam — Entrepreneur & Digital Transformation Leader' }}</title>
+    
+    <!-- Primary Description -->
+    <meta name="description" content="{{ $metaDescription ?? 'Dhaka-based entrepreneur & digital transformation expert (15+ years). Strategy, branding, SaaS & web growth. View portfolio or book a call.' }}">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ $canonical ?? url()->current() }}" />
+    
+    <!-- Indexing Controls -->
+    <meta name="robots" content="{{ $robots ?? 'index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1' }}">
+    <meta name="googlebot" content="{{ $googlebot ?? 'index,follow' }}">
+    <meta name="bingbot" content="index,follow">
+    
+    <!-- Language / Hreflang (বাংলা প্রাইমারি, ইংরেজি অল্টারনেট) -->
+    <link rel="alternate" href="{{ url()->current() }}" hreflang="bn-BD">
+    <link rel="alternate" href="{{ url()->current() }}" hreflang="en-US">
+    <link rel="alternate" href="{{ url()->current() }}" hreflang="x-default">
+    
+    <!-- Author / Publisher -->
+    <meta name="author" content="Raquibul Islam">
+    <meta name="publisher" content="Raquibul Islam">
+    <!-- ===================== Open Graph (Facebook/LinkedIn) ===================== -->
+    <meta property="og:site_name" content="Raquibul Islam">
+    <meta property="og:locale" content="bn_BD">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:type" content="{{ $ogType ?? 'website' }}">
+    <meta property="og:title" content="{{ $metaTitle ?? 'Raquibul Islam — Entrepreneur & Digital Transformation Leader' }}">
+    <meta property="og:description" content="{{ $metaDescription ?? 'Dhaka-based entrepreneur & digital transformation expert (15+ years). Strategy, branding, SaaS & web growth.' }}">
+    <meta property="og:url" content="{{ $canonical ?? url()->current() }}">
+    <meta property="og:image" content="{{ $metaImage ?? asset('storage/og/home.jpg') }}">
+    <meta property="og:image:secure_url" content="{{ $metaImage ?? asset('storage/og/home.jpg') }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="{{ $ogImageAlt ?? 'Raquibul Islam — Entrepreneur & Digital Transformation Leader' }}">
+    
+    <!-- ===================== Twitter Card ===================== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $metaTitle ?? 'Raquibul Islam — Entrepreneur & Digital Transformation Leader' }}">
+    <meta name="twitter:description" content="{{ $metaDescription ?? 'Strategy, branding, SaaS & web growth. View portfolio or book a call.' }}">
+    <meta name="twitter:image" content="{{ $metaImage ?? asset('storage/og/home.jpg') }}">
 
     <style>
         /* Gallery Grid */
@@ -146,6 +188,73 @@
             background: rgba(255, 152, 0, 0.8);
         }
     </style>
+    
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WNR9X7TZ');</script>
+    <!-- End Google Tag Manager -->
+    
+    
+    
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WNR9X7TZ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    
+@php
+$jsonLd = array(
+  "@context" => "https://schema.org",
+  "@graph" => array(
+    array(
+      "@type" => "Person",
+      "@id" => url('/').'#person',
+      "name" => "Raquibul Islam",
+      "jobTitle" => "Entrepreneur & Digital Transformation Expert",
+      "description" => "Entrepreneur, innovator, and digital transformation expert with 15+ years of experience building successful ventures and leading high-performance teams.",
+      "image" => asset('storage/og/profile.jpg'),
+      "email" => "mailto:raquibul2030@gmail.com",
+      "address" => array(
+        "@type" => "PostalAddress",
+        "streetAddress" => "46, Shewrapara, Begum Rokeya Sarani",
+        "addressLocality" => "Dhaka",
+        "addressCountry" => "BD"
+      ),
+      "sameAs" => array(
+        "https://www.facebook.com/your.profile",
+        "https://www.linkedin.com/in/your.profile",
+        "https://x.com/your.profile",
+        "https://www.youtube.com/@your.channel"
+      ),
+      "url" => url('/')
+    ),
+    array(
+      "@type" => "WebSite",
+      "@id" => url('/').'#website',
+      "url" => url('/'),
+      "name" => "Raquibul Islam",
+      "inLanguage" => "bn-BD",
+      "publisher" => array("@id" => url('/').'#person'),
+      "potentialAction" => array(
+        "@type" => "SearchAction",
+        "target" => url('/').'?q={search_term_string}',
+        "query-input" => "required name=search_term_string"
+      )
+    )
+  )
+);
+@endphp
+
+<script type="application/ld+json">
+{!! json_encode($jsonLd, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT) !!}
+</script>
+
+
 
 </head>
 
@@ -185,7 +294,7 @@
     <section id="home" class="hero">
         <div class="hero-background">
             <img src="{{ asset('storage/galleries/6G3YhKrt8QKcyXMVeX56qYq4VB9W9kVHJmT7d3F9.jpg') }}"
-                style="opacity: 0.7;" alt="Entrepreneur workspace" class="hero-image">
+                style="opacity: 0.3;" alt="Entrepreneur workspace" class="hero-image">
             <div class="hero-overlay"></div>
         </div>
 

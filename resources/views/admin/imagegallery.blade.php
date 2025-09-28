@@ -29,11 +29,12 @@
                             data-url="{{ route('imagesdestroy', $img) }}"
                         >
                             &times;
-                        </button>
+                        </button> 
+                        
 
                         {{-- Image itself --}}
                         <img
-                            src="{{ $img->image_url ?? ( $img->image_url ? asset('storage/'.$img->image_url) : '' ) }}"
+                            src="{{ asset('storage') }}/{{ $img->image_url }}"
                             alt="{{ $img->title ?? 'Uploaded Image' }}"
                             class="w-full h-56 object-cover"
                             loading="lazy"

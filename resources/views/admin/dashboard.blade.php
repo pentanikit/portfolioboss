@@ -333,14 +333,15 @@
 
         <div class="layout">
             <aside class="sidebar" id="sidebar">
-                <div class="brand">
+                <a class="brand" href="{{ route('dashboard') }}">
                     <div class="brand-logo">R</div>
                     <div class="brand-name">Raquibul Islam</div>
-                </div>
+                </a>
                 <nav class="nav">
                     <a href="#" class="active"><span>🏠</span><span>Overview</span></a>
                     <a href="{{ route('blog') }}"><span>🚀</span><span>Blog</span></a>
                     <a href="{{ route('gallery') }}"><span>📁</span><span>Photo Gallery</span></a>
+                    <a href="{{ route('album') }}"><span>📁</span><span>Show Gallery</span></a>
                     <a href="{{ route('logout') }}"><span>📁</span><span>Log out</span></a>
                 </nav>
             </aside>
@@ -352,9 +353,8 @@
                     <div class="search"><span>🔎</span><input id="searchInput"
                             placeholder="Search ventures, posts, events…" /></div>
                     <div class="actions">
-                        <button class="icon-btn" id="themeBtn">🌓</button>
-                        <button class="icon-btn" id="notifBtn">🔔</button>
-                        <button class="btn" id="newBtn">+ New</button>
+                       
+                        <a class="btn" href="{{ route('blog') }}" id="newBtn">+ New</a>
                     </div>
                 </div>
 
@@ -464,7 +464,7 @@
                                 </div>
                             </div>
 
-                            <div class="border rounded-lg" style="max-width: 100%; overflow-x: auto;">
+                            <div class="border rounded-lg" style="max-width: 100%; max-height: 400px; overflow-x: auto; overflow-y:auto;">
                                 <table id="postTable" class="min-w-full divide-y divide-gray-200" >
                                     <thead class="bg-gray-50">
                                         <tr>

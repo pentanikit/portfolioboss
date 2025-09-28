@@ -36,7 +36,7 @@
 
 
                         {{-- Image itself --}}
-                        <img src="{{ asset('storage') }}/{{ $img->image_url }}" style="width: 400px; height: 200px;" alt="{{ $img->title ?? 'Uploaded Image' }}"
+                        <img src="{{ asset('storage') }}/{{ $img->image_url }}" style="width: 600px; height: 400px;" alt="{{ $img->title ?? 'Uploaded Image' }}"
                             class=" object-cover" loading="lazy">
 
                         {{-- Optional caption area --}}

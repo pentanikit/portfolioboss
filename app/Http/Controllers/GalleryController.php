@@ -15,7 +15,10 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        //
+                // Adjust ordering as you like
+        $images = Gallery::orderBy('created_at', 'desc')->get();
+
+        return view('admin.imagegallery')->with('images', $images);
     }
 
     /**
@@ -90,8 +93,31 @@ class GalleryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Gallery $gallery)
+    public function destroy(Gallery $gallery, Request $request)
     {
-        //
+        try {
+            // Optional: authorization
+            // $this->authorize('delete', $image);
+
+            // If you stored relative path in $image->path (e.g., "uploads/foo.jpg")
+            // and the file is in the public disk:
+            if ($gallery->path && Storage::disk('public')->exists($gallery->path)) {
+                Storage::disk('public')->delete($gallery->path);
+            }
+
+            $gallery->delete();
+
+            return response()->json([
+                'ok'   => true,
+                'id'   => $gallery->id,
+                'msg'  => 'Image deleted successfully.',
+            ], Response::HTTP_OK);
+        } catch (\Throwable $e) {
+            return response()->json([
+                'ok'   => false,
+                'msg'  => 'Failed to delete image.',
+                'err'  => config('app.debug') ? $e->getMessage() : null,
+            ], Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
     }
 }

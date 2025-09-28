@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Carbon;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\DB;
 
 class BlogController extends Controller
 {
@@ -103,5 +105,59 @@ class BlogController extends Controller
     public function destroy(Blog $blog)
     {
         //
+    }
+
+
+        /**
+     * Handle bulk actions for posts.
+     *
+     * Expects JSON: { action: "delete"|"unpublish", ids: [1,2,3] }
+     */
+    public function handle(Request $request)
+    {
+        $data = $request->validate([
+            'action' => ['required', Rule::in(['delete', 'unpublish'])],
+            'ids'    => ['required', 'array', 'min:1'],
+            'ids.*' => ['integer', 'exists:blogs,id'],
+        ]);
+
+        $ids = $data['ids'];
+        $action = $data['action'];
+
+        // OPTIONAL: authorize user (Policies/Gates)
+        // $this->authorize('bulkAction', Post::class);
+
+        DB::beginTransaction();
+        try {
+            if ($action === 'delete') {
+                // Prefer SoftDeletes on Post model
+                $affected = Blog::whereIn('id', $ids)->delete();
+                $msg = "{$affected} post(s) deleted.";
+            } else { // unpublish
+                $affected = Blog::whereIn('id', $ids)
+                    ->update([
+                        'status' => 'archived',
+                        'published_at' => null,
+                        'updated_at' => now(),
+                    ]);
+                $msg = "{$affected} post(s) unpublished.";
+            }
+
+            DB::commit();
+            return response()->json([
+                'ok' => true,
+                'count' => $affected ?? 0,
+                'message' => $msg,
+            ]);
+
+        } catch (\Throwable $e) {
+            DB::rollBack();
+            report($e);
+
+            return response()->json([
+                'ok' => false,
+                'message' => 'Bulk action failed.',
+            ], 422);
+        }
     }
 }

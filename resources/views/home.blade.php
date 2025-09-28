@@ -226,10 +226,10 @@ $jsonLd = array(
         "addressCountry" => "BD"
       ),
       "sameAs" => array(
-        "https://www.facebook.com/your.profile",
-        "https://www.linkedin.com/in/your.profile",
-        "https://x.com/your.profile",
-        "https://www.youtube.com/@your.channel"
+        "https://www.facebook.com/raquibul2030",
+        "https://www.linkedin.com/in/raquibulislamrakib/",
+        
+        "https://www.youtube.com/@raquibulislamrakib"
       ),
       "url" => url('/')
     ),
@@ -999,48 +999,7 @@ $jsonLd = array(
         </div>
     </footer>
 
-    <!-- Project Modal -->
-    {{-- <div id="project-modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="modal-title" class="modal-title"></h2>
-                <button class="modal-close" onclick="closeProjectModal()">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <img id="modal-image" class="modal-image" src="" alt="">
-                <div class="modal-details">
-                    <div class="modal-description">
-                        <h4>Project Details</h4>
-                        <p id="modal-long-description"></p>
-                        <div class="modal-info">
-                            <div><strong>Category:</strong> <span id="modal-category"></span></div>
-                            <div><strong>Status:</strong> <span id="modal-status"></span></div>
-                            <div><strong>Metrics:</strong> <span id="modal-metrics"></span></div>
-                        </div>
-                    </div>
-                    <div class="modal-technologies">
-                        <h4>Technologies Used</h4>
-                        <div id="modal-tech-list" class="tech-tags"></div>
-
-                        <h4>Key Achievements</h4>
-                        <ul id="modal-achievements" class="achievement-list"></ul>
-                    </div>
-                </div>
-                <div class="modal-actions">
-                    <button class="btn btn-primary" onclick="viewLive()">
-                        <i class="fas fa-external-link-alt"></i>
-                        View Live
-                    </button>
-                    <button class="btn btn-outline" onclick="viewCode()">
-                        <i class="fab fa-github"></i>
-                        View Code
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div> --}}
+ 
 
     <!-- Toast Notification -->
     <div id="toast" class="toast">

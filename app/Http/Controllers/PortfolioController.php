@@ -10,7 +10,7 @@ use App\Models\Gallery;
 class PortfolioController extends Controller
 {
     public function index(){
-      $posts = Blog::orderBy('created_at', 'desc')->take(6)->get();
+      $posts = Blog::where('status', 'published')->orderBy('created_at', 'desc')->take(6)->get();
       $photos = Gallery::latest('id')
             ->take(6)
             ->get();

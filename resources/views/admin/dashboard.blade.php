@@ -446,7 +446,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="grid-6">
+                    <div class="grid-5">
                         <div class="max-w-7xl mx-auto p-6">
                             <div class="flex items-center justify-between mb-4">
                                 <h1 class="text-2xl font-semibold">Posts</h1>
@@ -464,8 +464,8 @@
                                 </div>
                             </div>
 
-                            <div class="overflow-x-auto border rounded-lg">
-                                <table id="postTable" class="min-w-full divide-y divide-gray-200">
+                            <div class="border rounded-lg" style="max-width: 100%; overflow-x: auto;">
+                                <table id="postTable" class="min-w-full divide-y divide-gray-200" >
                                     <thead class="bg-gray-50">
                                         <tr>
                                             <th class="w-12 p-3">
@@ -494,8 +494,9 @@
                                                         {{ ucfirst($post->status) }}
                                                     </span>
                                                 </td>
+                                                <td class="px-3 py-3 text-sm text-gray-900"><img src="{{ asset('storage') }}/{{ $post->image }}" style="width: 100px; height:80px;" alt="" srcset=""></td>
                                                 <td class="px-3 py-3 text-sm text-gray-600">
-                                                    {{ optional($post->published_at)->format('Y-m-d H:i') ?: '—' }}
+                                                    {{ $post->created_at->format('Y-m-d H:i') ?: '—' }}
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -535,7 +536,7 @@
                                 if (action === 'unpublish' && !confirm(`Unpublish ${ids.length} post(s)?`)) return;
 
                                 try {
-                                    const res = await fetch("", {
+                                    const res = await fetch("{{ route('bulkpostdelete') }}", {
                                         method: 'POST',
                                         headers: {
                                             'Content-Type': 'application/json',
@@ -608,6 +609,7 @@
         <script>
             $(function() {
                 $('#postTable').DataTable({
+                  
                     pageLength: 25,
                     order: [
                         [1, 'asc']

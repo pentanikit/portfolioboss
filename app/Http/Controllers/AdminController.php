@@ -40,7 +40,7 @@ class AdminController extends Controller
 
 
     public function dashboard(){
-        $postCount = Blog::where('status', 'published')->get();
+        $postCount = Blog::all();
         $archiveCount = Blog::where('status', 'archived')->count();
         $draftCount = Blog::where('status', 'draft')->count();
         $photoCount = Gallery::all()->count();

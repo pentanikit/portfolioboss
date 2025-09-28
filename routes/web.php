@@ -20,6 +20,9 @@ Route::middleware(CheckAdmin::class)->prefix('admin')->group(function(){
     Route::get('/blog', [AdminController::class, 'blog'])->name('blog');
     Route::get('/galleries', [AdminController::class, 'gallery'])->name('gallery');
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+    Route::get('/show/gallery', [GalleryController::class, 'index'])->name('album');
+    Route::post('/deletebulkposts', [BlogController::class, 'handle'])->name('bulkpostdelete');
+    Route::delete('/gallery/{gallery}', [GalleryController::class, 'destroy'])->name('imagesdestroy');
 
     //post routes
     Route::post('/createblog', [BlogController::class, 'store'])->name('createBlogpost');

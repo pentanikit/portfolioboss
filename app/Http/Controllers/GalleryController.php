@@ -111,13 +111,13 @@ class GalleryController extends Controller
                 'ok'   => true,
                 'id'   => $gallery->id,
                 'msg'  => 'Image deleted successfully.',
-            ], Response::HTTP_OK);
+            ]);
         } catch (\Throwable $e) {
             return response()->json([
                 'ok'   => false,
                 'msg'  => 'Failed to delete image.',
                 'err'  => config('app.debug') ? $e->getMessage() : null,
-            ], Response::HTTP_INTERNAL_SERVER_ERROR);
+            ]);
         }
     }
 }

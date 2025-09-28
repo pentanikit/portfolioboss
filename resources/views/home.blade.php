@@ -21,26 +21,28 @@
 
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-        <!-- Dynamic Title (fallback সহ) -->
+
+    <!-- Dynamic Title (fallback সহ) -->
     <title>{{ $metaTitle ?? 'Raquibul Islam — Entrepreneur & Digital Transformation Leader' }}</title>
-    
+
     <!-- Primary Description -->
-    <meta name="description" content="{{ $metaDescription ?? 'Dhaka-based entrepreneur & digital transformation expert (15+ years). Strategy, branding, SaaS & web growth. View portfolio or book a call.' }}">
-    
+    <meta name="description"
+        content="{{ $metaDescription ?? 'Dhaka-based entrepreneur & digital transformation expert (15+ years). Strategy, branding, SaaS & web growth. View portfolio or book a call.' }}">
+
     <!-- Canonical -->
     <link rel="canonical" href="{{ $canonical ?? url()->current() }}" />
-    
+
     <!-- Indexing Controls -->
-    <meta name="robots" content="{{ $robots ?? 'index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1' }}">
+    <meta name="robots"
+        content="{{ $robots ?? 'index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1' }}">
     <meta name="googlebot" content="{{ $googlebot ?? 'index,follow' }}">
     <meta name="bingbot" content="index,follow">
-    
+
     <!-- Language / Hreflang (বাংলা প্রাইমারি, ইংরেজি অল্টারনেট) -->
     <link rel="alternate" href="{{ url()->current() }}" hreflang="bn-BD">
     <link rel="alternate" href="{{ url()->current() }}" hreflang="en-US">
     <link rel="alternate" href="{{ url()->current() }}" hreflang="x-default">
-    
+
     <!-- Author / Publisher -->
     <meta name="author" content="Raquibul Islam">
     <meta name="publisher" content="Raquibul Islam">
@@ -49,19 +51,24 @@
     <meta property="og:locale" content="bn_BD">
     <meta property="og:locale:alternate" content="en_US">
     <meta property="og:type" content="{{ $ogType ?? 'website' }}">
-    <meta property="og:title" content="{{ $metaTitle ?? 'Raquibul Islam — Entrepreneur & Digital Transformation Leader' }}">
-    <meta property="og:description" content="{{ $metaDescription ?? 'Dhaka-based entrepreneur & digital transformation expert (15+ years). Strategy, branding, SaaS & web growth.' }}">
+    <meta property="og:title"
+        content="{{ $metaTitle ?? 'Raquibul Islam — Entrepreneur & Digital Transformation Leader' }}">
+    <meta property="og:description"
+        content="{{ $metaDescription ?? 'Dhaka-based entrepreneur & digital transformation expert (15+ years). Strategy, branding, SaaS & web growth.' }}">
     <meta property="og:url" content="{{ $canonical ?? url()->current() }}">
     <meta property="og:image" content="{{ $metaImage ?? asset('storage/og/home.jpg') }}">
     <meta property="og:image:secure_url" content="{{ $metaImage ?? asset('storage/og/home.jpg') }}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="{{ $ogImageAlt ?? 'Raquibul Islam — Entrepreneur & Digital Transformation Leader' }}">
-    
+    <meta property="og:image:alt"
+        content="{{ $ogImageAlt ?? 'Raquibul Islam — Entrepreneur & Digital Transformation Leader' }}">
+
     <!-- ===================== Twitter Card ===================== -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ $metaTitle ?? 'Raquibul Islam — Entrepreneur & Digital Transformation Leader' }}">
-    <meta name="twitter:description" content="{{ $metaDescription ?? 'Strategy, branding, SaaS & web growth. View portfolio or book a call.' }}">
+    <meta name="twitter:title"
+        content="{{ $metaTitle ?? 'Raquibul Islam — Entrepreneur & Digital Transformation Leader' }}">
+    <meta name="twitter:description"
+        content="{{ $metaDescription ?? 'Strategy, branding, SaaS & web growth. View portfolio or book a call.' }}">
     <meta name="twitter:image" content="{{ $metaImage ?? asset('storage/og/home.jpg') }}">
 
     <style>
@@ -188,69 +195,81 @@
             background: rgba(255, 152, 0, 0.8);
         }
     </style>
-    
-    
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-WNR9X7TZ');</script>
-    <!-- End Google Tag Manager -->
-    
-    
-    
-    
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WNR9X7TZ"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    
-    
-@php
-$jsonLd = array(
-  "@context" => "https://schema.org",
-  "@graph" => array(
-    array(
-      "@type" => "Person",
-      "@id" => url('/').'#person',
-      "name" => "Raquibul Islam",
-      "jobTitle" => "Entrepreneur & Digital Transformation Expert",
-      "description" => "Entrepreneur, innovator, and digital transformation expert with 15+ years of experience building successful ventures and leading high-performance teams.",
-      "image" => asset('storage/og/profile.jpg'),
-      "email" => "mailto:raquibul2030@gmail.com",
-      "address" => array(
-        "@type" => "PostalAddress",
-        "streetAddress" => "46, Shewrapara, Begum Rokeya Sarani",
-        "addressLocality" => "Dhaka",
-        "addressCountry" => "BD"
-      ),
-      "sameAs" => array(
-        "https://www.facebook.com/raquibul2030",
-        "https://www.linkedin.com/in/raquibulislamrakib/",
-        
-        "https://www.youtube.com/@raquibulislamrakib"
-      ),
-      "url" => url('/')
-    ),
-    array(
-      "@type" => "WebSite",
-      "@id" => url('/').'#website',
-      "url" => url('/'),
-      "name" => "Raquibul Islam",
-      "inLanguage" => "bn-BD",
-      "publisher" => array("@id" => url('/').'#person'),
-      "potentialAction" => array(
-        "@type" => "SearchAction",
-        "target" => url('/').'?q={search_term_string}',
-        "query-input" => "required name=search_term_string"
-      )
-    )
-  )
-);
-@endphp
 
-<script type="application/ld+json">
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WNR9X7TZ');
+    </script>
+    <!-- End Google Tag Manager -->
+
+
+
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WNR9X7TZ" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+    @php
+        $jsonLd = [
+            '@context' => 'https://schema.org',
+            '@graph' => [
+                [
+                    '@type' => 'Person',
+                    '@id' => url('/') . '#person',
+                    'name' => 'Raquibul Islam',
+                    'jobTitle' => 'Entrepreneur & Digital Transformation Expert',
+                    'description' =>
+                        'Entrepreneur, innovator, and digital transformation expert with 15+ years of experience building successful ventures and leading high-performance teams.',
+                    'image' => asset('storage/og/profile.jpg'),
+                    'email' => 'mailto:raquibul2030@gmail.com',
+                    'address' => [
+                        '@type' => 'PostalAddress',
+                        'streetAddress' => '46, Shewrapara, Begum Rokeya Sarani',
+                        'addressLocality' => 'Dhaka',
+                        'addressCountry' => 'BD',
+                    ],
+                    'sameAs' => [
+                        'https://www.facebook.com/raquibul2030',
+                        'https://www.linkedin.com/in/raquibulislamrakib/',
+
+                        'https://www.youtube.com/@raquibulislamrakib',
+                    ],
+                    'url' => url('/'),
+                ],
+                [
+                    '@type' => 'WebSite',
+                    '@id' => url('/') . '#website',
+                    'url' => url('/'),
+                    'name' => 'Raquibul Islam',
+                    'inLanguage' => 'bn-BD',
+                    'publisher' => ['@id' => url('/') . '#person'],
+                    'potentialAction' => [
+                        '@type' => 'SearchAction',
+                        'target' => url('/') . '?q={search_term_string}',
+                        'query-input' => 'required name=search_term_string',
+                    ],
+                ],
+            ],
+        ];
+    @endphp
+
+    <script type="application/ld+json">
 {!! json_encode($jsonLd, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT) !!}
 </script>
 
@@ -293,8 +312,8 @@ $jsonLd = array(
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-background">
-            <img src="{{ asset('storage/galleries/hero.jpg') }}"
-                style="opacity: 0.3;" alt="Entrepreneur workspace" class="hero-image">
+            <img src="{{ asset('storage/galleries/hero.jpg') }}" style="opacity: 0.3;" alt="Entrepreneur workspace"
+                class="hero-image">
             <div class="hero-overlay"></div>
         </div>
 
@@ -374,7 +393,7 @@ $jsonLd = array(
                         I am Raquibul Islam, a passionate and forward-thinking entrepreneur from Bangladesh.
                         My journey in the world of business began in 2011 with the electronics sector, and over the
                         years, I have diversified into multiple other ventures that are also running successfully today.
-                        
+
                     </p>
                     <p class="about-paragraph">
                         We warmly invite you to become a part of the our family. Your valuable feedback and suggestions
@@ -383,7 +402,7 @@ $jsonLd = array(
 
                         May the Almighty bless us all with prosperity, growth and success in every walk of life.
 
-                       
+
                     </p>
                     {{-- <p class="about-paragraph">
                         Warm regards, <br>
@@ -453,8 +472,8 @@ $jsonLd = array(
                 <a class="achievement-card" style="text-decoration: none;"
                     href="https://basis.org.bd/company-profile/20-11-1195" target="_blank">
 
-                    <div class="achievement-value"><img src="{{ asset('storage/logos/basis.png') }}"
-                            alt="" srcset=""></div>
+                    <div class="achievement-value"><img src="{{ asset('storage/logos/basis.png') }}" alt=""
+                            srcset=""></div>
                     <div class="achievement-label">General Member BASIS</div>
                 </a>
                 <a class="achievement-card" style="text-decoration: none;"
@@ -466,8 +485,8 @@ $jsonLd = array(
                 </a>
                 <a class="achievement-card" style="text-decoration: none;" href="#" target="_blank">
 
-                    <div class="achievement-value"><img src="{{ asset('storage/logos/jci.png') }}"
-                            alt="" srcset=""></div>
+                    <div class="achievement-value"><img src="{{ asset('storage/logos/jci.png') }}" alt=""
+                            srcset=""></div>
                     <div class="achievement-label">Local Vice President</div>
                 </a>
             </div>
@@ -689,67 +708,31 @@ $jsonLd = array(
 
 
             <h2>Photos</h2>
-            <div class="gallery" id="gallery">
+            @if ($photos)
+                <div class="gallery" id="gallery">
 
-                @foreach ($photos as $item)
-                    <figure>
-                        <img src="{{ asset('storage') }}/{{ $item->image_url }}" alt="Project 1">
-                        <figcaption>{{ $item->title }}</figcaption>
-                    </figure>
-                @endforeach
-                {{-- <!-- First 6 -->
+                    @foreach ($photos as $item)
+                        <figure>
+                            <img src="{{ asset('storage') }}/{{ $item->image_url }}" alt="Project 1">
+                            <figcaption>{{ $item->title }}</figcaption>
+                        </figure>
+                    @endforeach
 
-                <figure>
-                    <img src="https://picsum.photos/id/1016/600/400" alt="Project 2">
-                    <figcaption>Bridge Architecture</figcaption>
-                </figure>
-                <figure>
-                    <img src="https://picsum.photos/id/1018/600/400" alt="Project 3">
-                    <figcaption>Forest Walk</figcaption>
-                </figure>
-                <figure>
-                    <img src="https://picsum.photos/id/1020/600/400" alt="Project 4">
-                    <figcaption>City Skyline</figcaption>
-                </figure>
-                <figure>
-                    <img src="https://picsum.photos/id/1021/600/400" alt="Project 5">
-                    <figcaption>Desert Road</figcaption>
-                </figure>
-                <figure>
-                    <img src="https://picsum.photos/id/1022/600/400" alt="Project 6">
-                    <figcaption>Snowy Peaks</figcaption>
-                </figure>
+                </div>
+                <button id="loadMore" class="load-more" data-skip="{{ $photos->count() }}" data-take="6">
+                    Load More
+                </button>
+            @else
+                <div class="gallery">
+                    <p>
+                        No Photos to show
+                    </p>
+                </div>
 
-                <!-- More hidden -->
-                <figure class="hidden">
-                    <img src="https://picsum.photos/id/1023/600/400" alt="Project 7">
-                    <figcaption>Quiet Lake</figcaption>
-                </figure>
-                <figure class="hidden">
-                    <img src="https://picsum.photos/id/1024/600/400" alt="Project 8">
-                    <figcaption>Street Alley</figcaption>
-                </figure>
-                <figure class="hidden">
-                    <img src="https://picsum.photos/id/1025/600/400" alt="Project 9">
-                    <figcaption>Green Hills</figcaption>
-                </figure>
-                <figure class="hidden">
-                    <img src="https://picsum.photos/id/1026/600/400" alt="Project 10">
-                    <figcaption>Ocean Sunset</figcaption>
-                </figure>
-                <figure class="hidden">
-                    <img src="https://picsum.photos/id/1027/600/400" alt="Project 11">
-                    <figcaption>Night Lights</figcaption>
-                </figure>
-                <figure class="hidden">
-                    <img src="https://picsum.photos/id/1028/600/400" alt="Project 12">
-                    <figcaption>Wooden Path</figcaption>
-                </figure> --}}
-            </div>
+            @endif
 
-            <button id="loadMore" class="load-more" data-skip="{{ $photos->count() }}" data-take="6">
-                Load More
-            </button>
+
+
 
             <!-- Lightbox -->
             <div class="lightbox" id="lightbox">
@@ -936,13 +919,14 @@ $jsonLd = array(
                         successful ventures.
                     </p>
                     <div class="social-links">
-                        <a href="https://www.youtube.com/@raquibulislamrakib" target="_blank" class="social-link"  >
+                        <a href="https://www.youtube.com/@raquibulislamrakib" target="_blank" class="social-link">
                             <i class="fab fa-youtube"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/raquibulislamrakib/" target="_blank" class="social-link" >
+                        <a href="https://www.linkedin.com/in/raquibulislamrakib/" target="_blank"
+                            class="social-link">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="https://www.facebook.com/raquibul2030" target="_blank" class="social-link" >
+                        <a href="https://www.facebook.com/raquibul2030" target="_blank" class="social-link">
                             <i class="fab fa-facebook"></i>
                         </a>
                     </div>
@@ -999,7 +983,7 @@ $jsonLd = array(
         </div>
     </footer>
 
- 
+
 
     <!-- Toast Notification -->
     <div id="toast" class="toast">

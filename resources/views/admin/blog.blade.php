@@ -185,18 +185,29 @@
         </style>
         <header class="page-head">
             <h1>Create New Blog</h1>
-           
+
         </header>
 
+        @if (session('success'))
+            <script>
+                toastr.success(@json(session('success')));
+            </script>
+        @endif
+
+        @if ($errors->any())
+            <script>
+                toastr.error(@json(collect($errors->all())->join("\n")));
+            </script>
+        @endif
         <!-- If you use Blade, replace the FORM wrapper with:
-                             {{-- <form method="POST" action="{{ route('admin.blogs.store') }}" id="blogForm"> --}}
-                               {{-- @csrf --}}
-                            and remove the fetch() in app.js (or keep name attributes and let normal POST happen). -->
+                                 {{-- <form method="POST" action="{{ route('admin.blogs.store') }}" id="blogForm"> --}}
+                                   {{-- @csrf --}}
+                                and remove the fetch() in app.js (or keep name attributes and let normal POST happen). -->
         <form id="blogForm" method="POST" action="{{ route('createBlogpost') }}" enctype="multipart/form-data" novalidate>
             @csrf
             <!-- Core content -->
             <section class="card">
-              
+
 
                 <div class="grid">
                     <div class="field">
@@ -208,7 +219,7 @@
 
                     <div class="field">
                         <label for="slug">Slug </label>
-                        <input type="text" id="slug" name="slug"  pattern="^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                        <input type="text" id="slug" name="slug" pattern="^[a-z0-9]+(?:-[a-z0-9]+)*$"
                             placeholder="auto-generated-from-title" />
                         <small class="hint">Lowercase letters, numbers, and hyphens only.</small>
                     </div>
@@ -299,16 +310,16 @@
             </section>
 
             <!-- Actions -->
-           
-               <div class="actions">
-                    <button type="submit" class="btn primary">Save Blog</button>
-                    <button type="reset" class="btn ghost">Reset</button>
-               </div>
 
-          
+            <div class="actions">
+                <button type="submit" class="btn primary">Save Blog</button>
+                <button type="reset" class="btn ghost">Reset</button>
+            </div>
+
+
 
             <!-- Submit result (for demo / JSON preview) -->
-           <a class="btn primary" href="{{ route('dashboard') }}">Back to home</a>
+            <a class="btn primary" href="{{ route('dashboard') }}">Back to home</a>
         </form>
 
         <script>

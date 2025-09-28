@@ -293,7 +293,7 @@ $jsonLd = array(
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-background">
-            <img src="{{ asset('storage/galleries/6G3YhKrt8QKcyXMVeX56qYq4VB9W9kVHJmT7d3F9.jpg') }}"
+            <img src="{{ asset('storage/galleries/hero.jpg') }}"
                 style="opacity: 0.3;" alt="Entrepreneur workspace" class="hero-image">
             <div class="hero-overlay"></div>
         </div>

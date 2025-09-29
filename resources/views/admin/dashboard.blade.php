@@ -333,7 +333,7 @@
 
         <div class="layout">
             <aside class="sidebar" id="sidebar">
-                <a class="brand" href="{{ route('dashboard') }}">
+                <a class="brand" style="text-decoration: none;" href="{{ route('dashboard') }}">
                     <div class="brand-logo">R</div>
                     <div class="brand-name">Raquibul Islam</div>
                 </a>
@@ -354,7 +354,7 @@
                             placeholder="Search ventures, posts, events…" /></div>
                     <div class="actions">
                        
-                        <a class="btn" href="{{ route('blog') }}" id="newBtn">+ New</a>
+                        <a class="btn" style="text-decoration: none;" href="{{ route('blog') }}" id="newBtn">+ New</a>
                     </div>
                 </div>
 

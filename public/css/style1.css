@@ -6,7 +6,7 @@
   --secondary: hsl(240, 14%, 88%);
   --secondary-foreground: hsl(240, 15%, 15%);
   --background: hsl(240, 20%, 98%);
-  --foreground: hsl(240, 15%, 15%);
+  --foreground: hsl(0, 0%, 0%);
   --muted: hsl(240, 12%, 90%);
   --muted-foreground: hsl(240, 10%, 45%);
   --accent: hsl(240, 12%, 86%);
@@ -409,7 +409,7 @@ p {
 
 .hero-description {
   font-size: 1.25rem;
-  color: var(--muted-foreground);
+  color: var(--foreground);
   margin-bottom: var(--spacing-xl);
   line-height: 1.6;
 }
@@ -436,7 +436,7 @@ p {
 
 .stat-label {
   font-size: 0.875rem;
-  color: var(--muted-foreground);
+  color: var(--foreground);
 }
 
 .hero-actions {

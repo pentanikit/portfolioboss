@@ -324,7 +324,7 @@
                     <div class="hero-title-line">I am <span class="hero-title-gradient">Raquibul Islam</span></div>
                 </h1>
 
-                <p class="hero-description" style="color:black; font-style:bold;">
+                <p class="hero-description" >
                     Entrepreneur, innovator, and digital transformation expert with 15+ years of experience
                     building successful ventures and leading high-performance teams.
                 </p>
@@ -333,15 +333,15 @@
                 <div class="hero-stats">
                     <div class="stat-item">
                         <div class="stat-number">15+</div>
-                        <div class="stat-label" style="color:black; font-style:bold;">Successful Ventures</div>
+                        <div class="stat-label" >Successful Ventures</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-number">15</div>
-                        <div class="stat-label" style="color:black; font-style:bold;">Years of success</div>
+                        <div class="stat-label" >Years of success</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-number">200+</div>
-                        <div class="stat-label" style="color:black; font-style:bold;">Team Members Led</div>
+                        <div class="stat-label" >Team Members Led</div>
                     </div>
                 </div>
 

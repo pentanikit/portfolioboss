@@ -23,31 +23,40 @@
             <p class="text-gray-500">No images uploaded yet.</p>
         @else
             <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                @foreach ($images as $img)
-                    <figure id="image-card-{{ $img->id }}"
-                        class="relative rounded-xl overflow-hidden shadow border bg-white">
-                        {{-- Delete (×) button --}}
-                        <button type="button"
-                            class="absolute right-2 top-2 z-10 inline-flex items-center justify-center h-8 w-8 rounded-full bg-black/60 text-white hover:bg-black"
-                            aria-label="Delete image" data-id="{{ $img->id }}"
-                            data-url="{{ route('imagesdestroy', $img) }}">
-                            &times;
-                        </button>
+            @foreach ($images as $img)
+            <figure id="image-card-{{ $img->id }}" class="rounded-xl overflow-hidden shadow border bg-white">
+                {{-- Image wrapper (relative) so the button pins to the image corner --}}
+                <div class="relative">
+                {{-- Delete (×) button on top-right of the IMAGE --}}
+                <button
+                    type="button"
+                    class="absolute right-2 top-2 z-10 inline-flex items-center justify-center h-8 w-8 rounded-full bg-black/60 text-white hover:bg-black"
+                    aria-label="Delete image"
+                    data-id="{{ $img->id }}"
+                    data-url="{{ route('imagesdestroy', $img) }}"
+                >
+                    &times;
+                </button>
 
+                {{-- Image itself (full width, fixed aspect) --}}
+                <img
+                    src="{{ asset('storage') }}/{{ $img->image_url }}"
+                    alt="{{ $img->title ?? 'Uploaded Image' }}"
+                    class="w-full block object-cover"
+                    style="aspect-ratio: 3 / 2;"
+                    loading="lazy"
+                >
+                </div>
 
-                        {{-- Image itself --}}
-                        <img src="{{ asset('storage') }}/{{ $img->image_url }}" style="width: 600px; height: 400px;" alt="{{ $img->title ?? 'Uploaded Image' }}"
-                            class=" object-cover" loading="lazy">
+                {{-- Optional caption area --}}
+                @if (!empty($img->title))
+                <figcaption class="p-3 text-sm text-gray-700">
+                    <div class="font-medium">{{ $img->title ?? '' }}</div>
+                </figcaption>
+                @endif
+            </figure>
+            @endforeach
 
-                        {{-- Optional caption area --}}
-                        @if (!empty($img->title))
-                            <figcaption class="p-3 text-sm text-gray-700">
-                                <div class="font-medium">{{ $img->title ?? '' }}</div>
-
-                            </figcaption>
-                        @endif
-                    </figure>
-                @endforeach
             </div>
         @endif
     </div>

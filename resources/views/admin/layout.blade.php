@@ -32,6 +32,7 @@
   <script>
     tinymce.init({
         selector: '#body',   // Target your textarea
+        license_key: 'gpl',
         plugins: 'link image code lists table emoticons preview',
         toolbar: 'undo redo | bold italic underline | alignleft aligncenter alignright | bullist numlist | link image table emoticons | code preview',
         menubar: false,

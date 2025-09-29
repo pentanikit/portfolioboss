@@ -28,7 +28,7 @@
   /* make sure toasts sit above modals/dropzones */
   #toast-container { z-index: 999999; }
 </style>
-  <script src="https://cdn.tiny.cloud/1/nkt0ul0xgfyq2olodlilzz1l2unzyzv5okgxbp9p23ce29tj/tinymce/8/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
+  <script src="{{ asset('js/tinymce/tinymce.min.js') }}"></script>
   <script>
     tinymce.init({
         selector: '#body',   // Target your textarea

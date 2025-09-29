@@ -42,8 +42,8 @@
                 <img
                     src="{{ asset('storage') }}/{{ $img->image_url }}"
                     alt="{{ $img->title ?? 'Uploaded Image' }}"
-                    class="w-full block object-cover"
-                    style="aspect-ratio: 3 / 2;"
+                    class="block object-cover"
+                    style="width:600px; height: 400px;"
                     loading="lazy"
                 >
                 </div>

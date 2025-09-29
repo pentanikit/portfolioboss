@@ -8,7 +8,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Middleware\CheckAdmin;
 
 
-Route::get('/', [PortfolioController::class, 'index']);
+Route::get('/', [PortfolioController::class, 'index'])->name('landing');
 Route::get('/login', [AdminController::class, 'showLogin'])->name('login');
 Route::post('/authorize', [AdminController::class, 'login'])->name('auth');
 Route::get('/logout', [AdminController::class, 'logout'])->name('logout');

@@ -353,8 +353,9 @@
                     <div class="search"><span>🔎</span><input id="searchInput"
                             placeholder="Search ventures, posts, events…" /></div>
                     <div class="actions">
-                       
+                       <a class="btn" style="text-decoration: none;" href="{{ route('landing') }}" target="_blank" id="newBtn">Visit Site</a>
                         <a class="btn" style="text-decoration: none;" href="{{ route('blog') }}" id="newBtn">+ New</a>
+                        
                     </div>
                 </div>
 

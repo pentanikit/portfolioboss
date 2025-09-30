@@ -683,7 +683,7 @@
                     <!-- Service 1 -->
                     @foreach ($posts as $item)
                         <a class="service-card" style="text-decoration: none; color:inherit;"
-                            href="/single-post/{{ $item->title }}">
+                            href="/show/{{ $item->slug }}">
                             <div>
 
                                 <img class="mb-3" style="width: 100%; height:200px; object-fit:cover;"

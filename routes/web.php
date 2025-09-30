@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Middleware\CheckAdmin;
+use App\Http\Controllers\ReactionController;
 
 
 Route::get('/', [PortfolioController::class, 'index'])->name('landing');
@@ -13,6 +14,11 @@ Route::get('/login', [AdminController::class, 'showLogin'])->name('login');
 Route::post('/authorize', [AdminController::class, 'login'])->name('auth');
 Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
 Route::get('/gallery/load-more', [PortfolioController::class, 'loadMore'])->name('loadmoreimages');
+Route::get('/show/{blog}', [BlogController::class, 'show'])->name('showSinglePost');
+// GET counts
+Route::get('/blogs/{blog}/reactions', [ReactionController::class, 'counts'])->name('reactions');
+// POST react
+Route::post('/blogs/{blog}/react', [ReactionController::class, 'react'])->name('react');
 
 
 //Admin Routes

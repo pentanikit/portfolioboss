@@ -80,7 +80,8 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
-        //
+        $blogPost = Blog::where('slug', $blog->slug)->get();
+        return view('single-post')->with('blog', $blogPost[0]);
     }
 
     /**

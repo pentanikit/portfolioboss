@@ -192,7 +192,7 @@
         </div>
     </nav>
         <article class="max-w-3xl mx-auto mb-3">
-            <h1 class="text-3xl font-bold mb-4">{{ $blog->title }}</h1>
+            <a style="text-decoration: none; font-size: 40px;" href="{{ route('landing') }}">←</a><h1 class="text-3xl font-bold mb-4">{{ $blog->title }}</h1>
 
             @if ($blog->image)
                 <img src="{{ asset('storage') }}/{{ $blog->image }}" alt="{{ $blog->title }}" class="w-full rounded-lg mb-4">

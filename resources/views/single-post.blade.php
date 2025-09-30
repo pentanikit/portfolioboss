@@ -165,18 +165,18 @@
     <nav class="navbar mb-4" id="navbar" style="position: sticky;">
         <div class="nav-container">
             <div class="nav-brand">
-                <a href="#home" class="brand-link"><img src="{{ asset('storage/raquibul.png') }}"
+                <a href="{{ route('landing') }}" class="brand-link"><img src="{{ asset('storage/raquibul.png') }}"
                         style="width:auto; height:40px;" alt="" srcset=""></a>
             </div>
 
             <!-- Desktop Navigation -->
             <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#gallery" class="nav-link">Photos</a>
-                <a href="#portfolio" class="nav-link">Business</a>
-                <a href="#services" class="nav-link">Blog</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="{{ route('landing') }}" class="nav-link">Home</a>
+                <a href="{{ route('landing') }}#about" class="nav-link">About</a>
+                <a href="{{ route('landing') }}#gallery" class="nav-link">Photos</a>
+                <a href="{{ route('landing') }}#portfolio" class="nav-link">Business</a>
+                <a href="{{ route('landing') }}#services" class="nav-link">Blog</a>
+                <a href="{{ route('landing') }}#contact" class="nav-link">Contact</a>
             </div>
 
             <!-- Theme Toggle & Mobile Menu -->
